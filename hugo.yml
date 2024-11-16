@@ -2,26 +2,25 @@ theme: docura
 
 enableGitInfo: true
 
-defaultContentLanguage: en
+defaultContentLanguage: zh
 
 languages:
-  en:
-    weight: 1
-    languageName: English
-    languageCode: en-US
-    contentDir: content/en
-    title: Your Site Name
-    params:
-      description: Your Site Description
-
   zh:
-    weight: 2
+    weight: 1
     languageName: 中文
     languageCode: zh-CN
     contentDir: content/zh
-    title: 您的站点名称
+    title: Go/Gin Gower 文档
     params:
-      description: 您的站点描述
+      description: Go/Gin Gower 是一个基于 Go 语言和 Gin 框架的项目.
+  en:
+    weight: 2
+    languageName: English
+    languageCode: en-US
+    contentDir: content/en
+    title: Go/Gin Gower Docs
+    params:
+      description: Go/Gin Gower is a project based on the Go language and the Gin framework.
 
 services:
   googleAnalytics:
@@ -35,10 +34,9 @@ markup:
       unsafe: true
 
 params:
-
   author:
-    name: Your Name
-    url: https://your.site
+    name: falling-ts
+    url: https://gower-docs.github.io
 
   themeColors:
     light: '#ffffff'
@@ -46,7 +44,7 @@ params:
 
   years:
     start: ''
-    present: 2023
+    present: 2024
 
   social:
     github: ''
@@ -90,8 +88,9 @@ menu:
       identifier: home
       pre: "<i class='icon icon-home'></i>"
       weight: 1
-    - url: /docs
-      name: menu.home
+
+    - url: /docs/zh
+      name: menu.documentation
       identifier: docs
       pre: "<i class='icon icon-book'></i>"
       weight: 2

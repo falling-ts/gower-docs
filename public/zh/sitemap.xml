@@ -2,40 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/zh/categories/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="//localhost:1313/categories/"
+                href="/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="//localhost:1313/zh/categories/"
+                href="/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/zh/tags/</loc>
+    <loc>/docs/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="//localhost:1313/tags/"
+                href="/en/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="//localhost:1313/zh/tags/"
+                href="/docs/"
                 />
   </url><url>
-    <loc>//localhost:1313/zh/</loc>
+    <loc>/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="//localhost:1313/"
+                href="/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="//localhost:1313/zh/"
+                href="/"
+                />
+  </url><url>
+    <loc>/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/tags/"
+                />
+  </url><url>
+    <loc>/zh/docs/%E4%BB%8B%E7%BB%8D/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/docs/introduce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/zh/docs/%E4%BB%8B%E7%BB%8D/"
                 />
   </url>
 </urlset>
