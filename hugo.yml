@@ -94,3 +94,5 @@ menu:
       identifier: docs
       pre: "<i class='icon icon-book'></i>"
       weight: 2
+
+publishDir: "docs"
