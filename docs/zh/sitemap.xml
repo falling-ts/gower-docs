@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/categories/"
+                href="//localhost:1313/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/categories/"
+                href="//localhost:1313/categories/"
                 />
   </url><url>
-    <loc>/docs/</loc>
+    <loc>//localhost:1313/docs/</loc>
     <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/"
+                href="//localhost:1313/en/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/docs/"
+                href="//localhost:1313/docs/"
                 />
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/"
+                href="//localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/"
+                href="//localhost:1313/"
                 />
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/tags/"
+                href="//localhost:1313/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/tags/"
+                href="//localhost:1313/tags/"
                 />
   </url><url>
-    <loc>/zh/docs/%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>//localhost:1313/zh/docs/%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/introduce/"
+                href="//localhost:1313/en/docs/introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/zh/docs/%E4%BB%8B%E7%BB%8D/"
+                href="//localhost:1313/zh/docs/%E4%BB%8B%E7%BB%8D/"
                 />
   </url>
 </urlset>
