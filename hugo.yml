@@ -24,7 +24,7 @@ languages:
 
 services:
   googleAnalytics:
-    ID: G-XXXXXXXXXX
+    ID: G-00000000
 
 markup:
   highlight:
@@ -36,7 +36,7 @@ markup:
 params:
   author:
     name: falling-ts
-    url: https://gower-docs.github.io
+    url: https://falling-ts.github.io
 
   themeColors:
     light: '#ffffff'
@@ -96,3 +96,5 @@ menu:
       weight: 2
 
 publishDir: "docs"
+baseURL: "https://falling-ts.github.io/gower-docs/"
+relativeURLs: true
