@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://falling-ts.github.io/gower-docs/categories/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://falling-ts.github.io/gower-docs/en/categories/"
+                href="/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="https://falling-ts.github.io/gower-docs/categories/"
+                href="/categories/"
                 />
   </url><url>
-    <loc>https://falling-ts.github.io/gower-docs/docs/</loc>
+    <loc>/docs/</loc>
     <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://falling-ts.github.io/gower-docs/en/docs/"
+                href="/en/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="https://falling-ts.github.io/gower-docs/docs/"
+                href="/docs/"
                 />
   </url><url>
-    <loc>https://falling-ts.github.io/gower-docs/</loc>
+    <loc>/</loc>
     <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://falling-ts.github.io/gower-docs/en/"
+                href="/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="https://falling-ts.github.io/gower-docs/"
+                href="/"
                 />
   </url><url>
-    <loc>https://falling-ts.github.io/gower-docs/tags/</loc>
+    <loc>/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://falling-ts.github.io/gower-docs/en/tags/"
+                href="/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="https://falling-ts.github.io/gower-docs/tags/"
+                href="/tags/"
                 />
   </url><url>
-    <loc>https://falling-ts.github.io/gower-docs/zh/docs/%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>/zh/docs/%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://falling-ts.github.io/gower-docs/en/docs/introduce/"
+                href="/en/docs/introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="https://falling-ts.github.io/gower-docs/zh/docs/%E4%BB%8B%E7%BB%8D/"
+                href="/zh/docs/%E4%BB%8B%E7%BB%8D/"
                 />
   </url>
 </urlset>
