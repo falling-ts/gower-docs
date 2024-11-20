@@ -1,8 +1,8 @@
 ---
 title: 介绍
-url: "/zh/docs/介绍"
+url: "/zh/single/介绍"
 aliases:
-- "/docs/zh"
+- "/single/zh"
 ---
 
 ## 介绍

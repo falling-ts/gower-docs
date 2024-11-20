@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Singles on Go/Gin Gower Docs</title>
+    <link>/en/single/</link>
+    <description>Recent content in Singles on Go/Gin Gower Docs</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <atom:link href="/en/single/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduce</title>
+      <link>/en/single/introduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/single/introduce/</guid>
+      <description>&lt;h2 id=&#34;introduce&#34;&gt;Introduce&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -14,21 +14,7 @@
                 href="/categories/"
                 />
   </url><url>
-    <loc>/docs/</loc>
-    <lastmod>2024-11-17T01:43:52+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="/en/docs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="/docs/"
-                />
-  </url><url>
     <loc>/</loc>
-    <lastmod>2024-11-17T01:43:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -38,6 +24,22 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="/"
+                />
+  </url><url>
+    <loc>/workspace/goland-%E4%BD%BF%E7%94%A8/</loc>
+  </url><url>
+    <loc>/workspace/gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
+  </url><url>
+    <loc>/single/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/single/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/single/"
                 />
   </url><url>
     <loc>/tags/</loc>
@@ -52,17 +54,60 @@
                 href="/tags/"
                 />
   </url><url>
-    <loc>/zh/docs/%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2024-11-17T01:43:52+08:00</lastmod>
+    <loc>/workspace/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/introduce/"
+                href="/en/workspace/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/zh/docs/%E4%BB%8B%E7%BB%8D/"
+                href="/workspace/"
                 />
+  </url><url>
+    <loc>/workspace/%E5%AE%89%E8%A3%85/</loc>
+  </url><url>
+    <loc>/workspace/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/</loc>
+  </url><url>
+    <loc>/zh/single/%E4%BB%8B%E7%BB%8D/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/single/introduce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/zh/single/%E4%BB%8B%E7%BB%8D/"
+                />
+  </url><url>
+    <loc>/workspace/%E4%BB%8B%E7%BB%8D/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/workspace/introduce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E4%BB%8B%E7%BB%8D/"
+                />
+  </url><url>
+    <loc>/workspace/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/workspace/catalog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/"
+                />
+  </url><url>
+    <loc>/workspace/%E4%B8%8B%E8%BD%BD/</loc>
+  </url><url>
+    <loc>/workspace/%E8%AF%A6%E7%BB%86%E6%89%8B%E5%86%8C/</loc>
   </url>
 </urlset>

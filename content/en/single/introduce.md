@@ -1,8 +1,8 @@
 ---
 title: Introduce
-url: "/en/docs/introduce"
+url: "/en/single/introduce"
 aliases:
-- "/docs"
+- "/single/en"
 ---
 
 ## Introduce

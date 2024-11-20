@@ -1,3 +1,4 @@
 menu:
   home: "Home"
-  documentation: "Documentation"
+  workspace: "Workspace Mode"
+  single: "Single Mode"

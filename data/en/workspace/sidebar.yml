@@ -1,0 +1,16 @@
+- title: Overview
+  pages:
+    - title: Introduce
+    - title: Catalog
+
+- title: Getting Started
+  pages:
+    - title: Download
+    - title: Using Goland
+    - title: Using Gradle
+
+- title: Gower
+  pages:
+    - title: Installation
+    - title: Initializing Project
+    - title: Detailed Manual
