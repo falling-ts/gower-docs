@@ -2,7 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/workspace/catalog/</loc>
+    <loc>/en/workspace/catalog/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -11,7 +12,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/workspace/catalog/"
+                href="/en/workspace/catalog/"
                 />
   </url><url>
     <loc>/en/categories/</loc>
@@ -26,7 +27,32 @@
                 href="/en/categories/"
                 />
   </url><url>
+    <loc>/en/workspace/detailed-manual/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E8%AF%A6%E7%BB%86%E6%89%8B%E5%86%8C/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/detailed-manual/"
+                />
+  </url><url>
+    <loc>/en/workspace/download/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E4%B8%8B%E8%BD%BD/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/download/"
+                />
+  </url><url>
     <loc>/en/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -38,11 +64,36 @@
                 href="/en/"
                 />
   </url><url>
-    <loc>/en/single/introduce/</loc>
+    <loc>/en/workspace/initializing-project/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/zh/single/%E4%BB%8B%E7%BB%8D/"
+                href="/workspace/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/initializing-project/"
+                />
+  </url><url>
+    <loc>/en/workspace/installation/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E5%AE%89%E8%A3%85/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/installation/"
+                />
+  </url><url>
+    <loc>/en/single/introduce/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/single/%E4%BB%8B%E7%BB%8D/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -50,7 +101,8 @@
                 href="/en/single/introduce/"
                 />
   </url><url>
-    <loc>/workspace/introduce/</loc>
+    <loc>/en/workspace/introduce/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -59,10 +111,11 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/workspace/introduce/"
+                href="/en/workspace/introduce/"
                 />
   </url><url>
     <loc>/en/single/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -86,7 +139,44 @@
                 href="/en/tags/"
                 />
   </url><url>
+    <loc>/en/workspace/using-goland/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/goland-%E4%BD%BF%E7%94%A8/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/using-goland/"
+                />
+  </url><url>
+    <loc>/en/workspace/using-gradle/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/using-gradle/"
+                />
+  </url><url>
+    <loc>/en/workspace/using-vscode/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/vscode-%E4%BD%BF%E7%94%A8/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/using-vscode/"
+                />
+  </url><url>
     <loc>/en/workspace/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"

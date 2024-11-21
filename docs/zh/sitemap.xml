@@ -15,6 +15,7 @@
                 />
   </url><url>
     <loc>/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -27,10 +28,33 @@
                 />
   </url><url>
     <loc>/workspace/goland-%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/using-goland/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/goland-%E4%BD%BF%E7%94%A8/"
+                />
   </url><url>
     <loc>/workspace/gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/using-gradle/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"
+                />
   </url><url>
     <loc>/single/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -54,7 +78,20 @@
                 href="/tags/"
                 />
   </url><url>
+    <loc>/workspace/vscode-%E4%BD%BF%E7%94%A8/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/using-vscode/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/vscode-%E4%BD%BF%E7%94%A8/"
+                />
+  </url><url>
     <loc>/workspace/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -67,10 +104,33 @@
                 />
   </url><url>
     <loc>/workspace/%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/installation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E5%AE%89%E8%A3%85/"
+                />
   </url><url>
     <loc>/workspace/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/initializing-project/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/"
+                />
   </url><url>
-    <loc>/zh/single/%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>/single/%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -79,14 +139,15 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="/zh/single/%E4%BB%8B%E7%BB%8D/"
+                href="/single/%E4%BB%8B%E7%BB%8D/"
                 />
   </url><url>
     <loc>/workspace/%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/workspace/introduce/"
+                href="/en/workspace/introduce/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -95,10 +156,11 @@
                 />
   </url><url>
     <loc>/workspace/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/workspace/catalog/"
+                href="/en/workspace/catalog/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -107,7 +169,29 @@
                 />
   </url><url>
     <loc>/workspace/%E4%B8%8B%E8%BD%BD/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/download/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E4%B8%8B%E8%BD%BD/"
+                />
   </url><url>
     <loc>/workspace/%E8%AF%A6%E7%BB%86%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2024-11-20T23:05:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/workspace/detailed-manual/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="/workspace/%E8%AF%A6%E7%BB%86%E6%89%8B%E5%86%8C/"
+                />
   </url>
 </urlset>

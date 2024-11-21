@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
@@ -8,7 +8,7 @@
 
 <title>Introduce · Go/Gin Gower Docs</title>
 
-<link rel="canonical" href="../../workspace/introduce/">
+<link rel="canonical" href="//localhost:1313/workspace/introduce/">
 
 
 
@@ -81,9 +81,9 @@
       <ul role="menu" class="dropdown-menu">
         
           
-          <li role="menuitem"><a href="../../workspace/%E4%BB%8B%E7%BB%8D/">中文</a></li>
+          <li role="menuitem"><a href="//localhost:1313/workspace/%E4%BB%8B%E7%BB%8D/">中文</a></li>
           
-          <li role="menuitem"><a href="../../workspace/introduce/">English</a></li>
+          <li role="menuitem"><a href="//localhost:1313/workspace/introduce/">English</a></li>
           
         
       </ul>
@@ -148,7 +148,14 @@
           
           <a class="sidebar-link " href="../../en/workspace/using-goland/">
             
-              Using Goland
+              Using GoLand
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../en/workspace/using-vscode/">
+            
+              Using VSCode
             
           </a>
         
@@ -196,7 +203,67 @@
       <div id="article-content">
         
         
-        <h2 id="introduce">Introduce</h2>
+        <p>Go/Gin Gower Workspace 工作目录, 是基于 Go 语言的 Workspace 与 GOPATH 相结合实现的工作区模式.</p>
+<h2 id="go-workspace-工作区">Go Workspace 工作区</h2>
+<p><code>go.work</code> 文件是 Go 1.18 版本引入的一个新特性, 用于管理多个模块（module）的工作区. 它允许你在一个工作区内同时开发和测试多个模块, 而不需要将这些模块作为依赖项添加到每个模块的 <code>go.mod</code> 文件中.</p>
+<h3 id="工作区的概念">工作区的概念</h3>
+<ul>
+<li><strong>工作区</strong>: 一个包含多个 Go 模块的目录.</li>
+<li><strong><code>go.work</code> 文件</strong>: 定义了工作区的配置文件, 指定了哪些模块属于这个工作区.</li>
+</ul>
+<h3 id="gowork-文件结构"><code>go.work</code> 文件结构</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="k">go</span> <span class="mf">1.18</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">use</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">module1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">module2</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>go 1.18</code></strong>: 指定 Go 的版本.</li>
+<li><strong><code>use</code></strong>: 列出工作区中包含的模块路径.</li>
+</ul>
+<h3 id="创建-gowork-文件">创建 <code>go.work</code> 文件</h3>
+<ul>
+<li>
+<p>使用命令 <code>go work init</code> 可以创建一个新的 <code>go.work</code> 文件, 并指定初始模块.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ go work init
+</span></span></code></pre></div></li>
+<li>
+<p>这将生成一个 <code>go.work</code> 文件.</p>
+</li>
+</ul>
+<h3 id="添加和删除模块">添加和删除模块</h3>
+<ul>
+<li><strong>添加模块</strong>: 使用 <code>go work use</code> 命令将新的模块添加到 <code>go.work</code> 文件中.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ go work use src/module1
+</span></span></code></pre></div></li>
+</ul>
+<blockquote>
+<p>注意: 添加之前, <code>src/module1</code> 项目中, 已经存在 go.mod 文件</p>
+</blockquote>
+<ul>
+<li><strong>删除模块</strong>: 使用 <code>go work remove</code> 命令从 <code>go.work</code> 文件中移除模块.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ go work remove src/module1
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="gopath">GOPATH</h2>
+<p><code>GOPATH</code> 是 Go 语言中的一个重要环境变量, 用于指定 Go 项目的默认工作目录. 它主要用于管理 Go 代码的组织/构建和依赖关系. 以下是关于 <code>GOPATH</code> 的详细说明:</p>
+<h3 id="1-gopath-的概念">1. GOPATH 的概念</h3>
+<ul>
+<li><strong>GOPATH</strong>: 是一个环境变量, 指定了 Go 项目的默认工作目录.</li>
+<li><strong>工作目录</strong>: 在这个目录下, Go 会查找和管理源代码/二进制文件和包对象.</li>
+</ul>
+<h3 id="2-gopath-的结构">2. GOPATH 的结构</h3>
+<p><code>GOPATH</code> 目录通常包含三个子目录:</p>
+<ul>
+<li><strong><code>src</code></strong>: 存放源代码文件.</li>
+<li><strong><code>pkg</code></strong>: 存放三方依赖包的目录.</li>
+<li><strong><code>bin</code></strong>: 存放编译后的可执行文件.</li>
+</ul>
+<h3 id="3-设置-gopath">3. 设置 GOPATH</h3>
+<p>在 GoLand 中, 你可以在 <code>Settings</code> -&gt; <code>Go</code> -&gt; <code>GOPATH</code> 中设置项目级别的 <code>GOPATH</code>.</p>
+<h2 id="联合使用">联合使用</h2>
+<p>当 Workspace 和 GOPATH 可以一起使用时, <code>go mod tidy</code> 会下载依赖包到 <code>pkg/mod</code> 目录下. <code>go install</code> 默认会将运行文件安装在 <code>bin</code> 目录下.</p>
 
       </div>
       
@@ -227,7 +294,7 @@
 
 
 <footer id="article-footer">
-  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+  <time id="article-last-updated" datetime="2024-11-20"><i class="icon icon-calendar"></i>&nbsp;Last updated: 2024-11-20</time>
 
   
 
@@ -242,7 +309,22 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduce">Introduce</a></li>
+    <li><a href="#go-workspace-工作区">Go Workspace 工作区</a>
+      <ul>
+        <li><a href="#工作区的概念">工作区的概念</a></li>
+        <li><a href="#gowork-文件结构"><code>go.work</code> 文件结构</a></li>
+        <li><a href="#创建-gowork-文件">创建 <code>go.work</code> 文件</a></li>
+        <li><a href="#添加和删除模块">添加和删除模块</a></li>
+      </ul>
+    </li>
+    <li><a href="#gopath">GOPATH</a>
+      <ul>
+        <li><a href="#1-gopath-的概念">1. GOPATH 的概念</a></li>
+        <li><a href="#2-gopath-的结构">2. GOPATH 的结构</a></li>
+        <li><a href="#3-设置-gopath">3. 设置 GOPATH</a></li>
+      </ul>
+    </li>
+    <li><a href="#联合使用">联合使用</a></li>
   </ul>
 </nav>
   </div>
@@ -310,7 +392,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-20')
+        navigator.serviceWorker.register('/sw.js?2024-11-21')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

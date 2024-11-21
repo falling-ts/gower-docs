@@ -6,7 +6,8 @@
 - title: 开始
   pages:
     - title: 下载
-    - title: Goland 使用
+    - title: GoLand 使用
+    - title: VSCode 使用
     - title: Gradle 构建工具使用
 
 - title: Gower

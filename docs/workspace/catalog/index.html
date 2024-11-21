@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
@@ -8,7 +8,7 @@
 
 <title>Catalog · Go/Gin Gower Docs</title>
 
-<link rel="canonical" href="../../workspace/catalog/">
+<link rel="canonical" href="//localhost:1313/workspace/catalog/">
 
 
 
@@ -81,9 +81,9 @@
       <ul role="menu" class="dropdown-menu">
         
           
-          <li role="menuitem"><a href="../../workspace/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/">中文</a></li>
+          <li role="menuitem"><a href="//localhost:1313/workspace/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/">中文</a></li>
           
-          <li role="menuitem"><a href="../../workspace/catalog/">English</a></li>
+          <li role="menuitem"><a href="//localhost:1313/workspace/catalog/">English</a></li>
           
         
       </ul>
@@ -148,7 +148,14 @@
           
           <a class="sidebar-link " href="../../en/workspace/using-goland/">
             
-              Using Goland
+              Using GoLand
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../en/workspace/using-vscode/">
+            
+              Using VSCode
             
           </a>
         
@@ -196,8 +203,22 @@
       <div id="article-content">
         
         
-        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Test</span>
-</span></span></code></pre></div>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">-</span> <span class="nx">bin</span><span class="o">/</span> <span class="c1">// 在源码中执行 go install, 将会安装到这个目录下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">-</span> <span class="nx">gradle</span><span class="o">/</span> <span class="c1">// Gradle 包装器目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">-</span> <span class="nx">wrapper</span><span class="o">/</span> <span class="c1">// 包装器 jar 包目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">-</span> <span class="nx">pkg</span><span class="o">/</span> <span class="c1">// 源码依赖三方包的存储目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*-</span> <span class="nx">src</span><span class="o">/</span> <span class="c1">// 项目源码目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*-</span> <span class="nx">build</span><span class="p">.</span><span class="nx">gradle</span> <span class="c1">// Gradle 总构建脚本
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*-</span> <span class="k">go</span><span class="p">.</span><span class="nx">work</span> <span class="c1">// Go 工作空间配置文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*-</span> <span class="nx">gradle</span><span class="p">.</span><span class="nx">properties</span> <span class="c1">// Gradle 配置文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">-</span> <span class="nx">gradlew</span> <span class="c1">// Gradle 包装器脚本[unix]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">-</span> <span class="nx">gradlew</span><span class="p">.</span><span class="nx">bat</span> <span class="c1">// Gradle 包装器脚本[windows]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*-</span> <span class="nx">settings</span><span class="p">.</span><span class="nx">gradle</span> <span class="c1">// Gradle 子模块配置文件
+</span></span></span></code></pre></div><blockquote>
+<p>尾部携带 <code>/</code> 的是指目录</p>
+<p>前面带 <code>*</code> 的是指重点目录或文件</p>
+</blockquote>
+
       </div>
       
 
@@ -235,7 +256,7 @@
 
 
 <footer id="article-footer">
-  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+  <time id="article-last-updated" datetime="2024-11-20"><i class="icon icon-calendar"></i>&nbsp;Last updated: 2024-11-20</time>
 
   
     <a id="article-prev-link" href="../../workspace/introduce/"><i class="icon icon-prev icon-colored"></i> Prev</a>
@@ -316,7 +337,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-20')
+        navigator.serviceWorker.register('/sw.js?2024-11-21')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

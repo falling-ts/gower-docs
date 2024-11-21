@@ -6,7 +6,7 @@
   <meta name="description" content="Go/Gin Gower 是一个基于 Go 语言和 Gin 框架的项目.">
 <meta name="author" content="falling-ts">
 
-<title>Goland 使用 · Go/Gin Gower 文档</title>
+<title>GoLand 使用 · Go/Gin Gower 文档</title>
 
 <link rel="canonical" href="../../workspace/goland-%E4%BD%BF%E7%94%A8/">
 
@@ -76,7 +76,11 @@
       </button>
       <ul role="menu" class="dropdown-menu">
         
-          <li role="menuitem"><a href="#">中文</a></li>
+          
+          <li role="menuitem"><a href="../../workspace/goland-%E4%BD%BF%E7%94%A8/">中文</a></li>
+          
+          <li role="menuitem"><a href="../../en/workspace/using-goland/">English</a></li>
+          
         
       </ul>
     </div>
@@ -143,7 +147,15 @@
           
           <a class="sidebar-link current" href="../../workspace/goland-%E4%BD%BF%E7%94%A8/">
             
-              Goland 使用
+              GoLand 使用
+            
+          </a>
+
+        
+          
+          <a class="sidebar-link " href="../../workspace/vscode-%E4%BD%BF%E7%94%A8/">
+            
+              VSCode 使用
             
           </a>
 
@@ -191,12 +203,37 @@
   <button id="article-nav-toc-btn"><i class="icon icon-toc"></i> On this page</button>
 </nav>
       <header id="article-header">
-  <h1>Goland 使用</h1>
+  <h1>GoLand 使用</h1>
 </header>
       <div id="article-content">
         
         
-        <h2 id="goland-使用">Goland 使用</h2>
+        <h2 id="goland-需要安装的插件">GoLand 需要安装的插件</h2>
+<ul>
+<li>提前在 GoLand 中安装好 Gradle 插件</li>
+<li>需要安装 JDK 23 及以上, 并指定 Gradle JVM 为 JDK 23</li>
+<li>推荐安装的 GoLand 插件
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">.env files support
+</span></span><span class="line"><span class="cl">PostCSS
+</span></span><span class="line"><span class="cl">Stylus
+</span></span><span class="line"><span class="cl">Tailwind CSS
+</span></span><span class="line"><span class="cl">Vite
+</span></span><span class="line"><span class="cl">Vue.js
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="使用-goland-打开-gower-work-项目">使用 GoLand 打开 <code>gower-work</code> 项目</h2>
+<ul>
+<li>第一次使用 GoLand 打开 <code>gower-work</code> 时，会提醒 <code>找到Gradle 'gower-work' 构建脚本</code>, 然后点击 <code>加载 Gradle 项目</code>, 会初始化 gradle 构建体系</li>
+<li>找到 <code>设置/GO/GOPATH/项目GOPATH</code>, 添加 <code>gower-work</code> 所在的绝对目录
+<ul>
+<li>这样在项目内执行 <code>go install</code> 时, 会自动把二进制安装到 bin 目录下</li>
+<li>项目目录下的 bin 也会添加到内置终端的环境变量中, 方便执行命令</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>如果提示 <code>go list</code> 找不到 go.mod 的错误, 无视关闭即可</p>
+</blockquote>
 
       </div>
       
@@ -251,14 +288,14 @@
 
 
 <footer id="article-footer">
-  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+  <time id="article-last-updated" datetime="2024-11-20"><i class="icon icon-calendar"></i>&nbsp;Last updated: 2024-11-20</time>
 
   
     <a id="article-prev-link" href="../../workspace/%E4%B8%8B%E8%BD%BD/"><i class="icon icon-prev icon-colored"></i> Prev</a>
   
 
   
-    <a id="article-next-link"  href="../../workspace/gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">Next <i class="icon icon-next icon-colored"></i></a>
+    <a id="article-next-link"  href="../../workspace/vscode-%E4%BD%BF%E7%94%A8/">Next <i class="icon icon-next icon-colored"></i></a>
   
 </footer>
     </article>
@@ -268,7 +305,8 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#goland-使用">Goland 使用</a></li>
+    <li><a href="#goland-需要安装的插件">GoLand 需要安装的插件</a></li>
+    <li><a href="#使用-goland-打开-gower-work-项目">使用 GoLand 打开 <code>gower-work</code> 项目</a></li>
   </ul>
 </nav>
   </div>
@@ -325,7 +363,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-20')
+        navigator.serviceWorker.register('/sw.js?2024-11-21')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

@@ -76,7 +76,11 @@
       </button>
       <ul role="menu" class="dropdown-menu">
         
-          <li role="menuitem"><a href="#">中文</a></li>
+          
+          <li role="menuitem"><a href="../../workspace/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/">中文</a></li>
+          
+          <li role="menuitem"><a href="../../en/workspace/initializing-project/">English</a></li>
+          
         
       </ul>
     </div>
@@ -143,7 +147,15 @@
           
           <a class="sidebar-link " href="../../workspace/goland-%E4%BD%BF%E7%94%A8/">
             
-              Goland 使用
+              GoLand 使用
+            
+          </a>
+
+        
+          
+          <a class="sidebar-link " href="../../workspace/vscode-%E4%BD%BF%E7%94%A8/">
+            
+              VSCode 使用
             
           </a>
 
@@ -196,7 +208,74 @@
       <div id="article-content">
         
         
-        <h2 id="初始化项目">初始化项目</h2>
+        <h3 id="新建一个-gower-项目">新建一个 Gower 项目</h3>
+<ul>
+<li>在 <code>gower-work</code> 项目根目录终端上, 执行:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gower create my-project
+</span></span></code></pre></div><ul>
+<li>运行结果如下:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">src<span class="se">\m</span>y-project 项目创建成功
+</span></span><span class="line"><span class="cl">---------------- 初始化 APP 密钥...:
+</span></span><span class="line"><span class="cl">APP 密钥生成成功
+</span></span><span class="line"><span class="cl">---------------- 初始化 JWT 密钥...:
+</span></span><span class="line"><span class="cl">JWT 密钥生成成功
+</span></span><span class="line"><span class="cl">---------------- 下载 Go 依赖包...:
+</span></span><span class="line"><span class="cl">---------------- 下载前端依赖包...:
+</span></span><span class="line"><span class="cl">Lockfile is up to date, resolution step is skipped
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">+ @types/vue 2.0.0
+</span></span><span class="line"><span class="cl">+ @vitejs/plugin-vue 4.0.0
+</span></span><span class="line"><span class="cl">+ cross-env 7.0.3
+</span></span><span class="line"><span class="cl">+ vite 5.4.6
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done in 1.2s
+</span></span><span class="line"><span class="cl">---------------- 初始化 Git 仓库...: 
+</span></span><span class="line"><span class="cl">Initialized empty Git repository in D:/Go/gower-work/src/my-project/.git/
+</span></span><span class="line"><span class="cl">---------------- 添加所有文件...: 
+</span></span><span class="line"><span class="cl">---------------- 初始化 commit...: 
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">create mode <span class="m">100644</span> utils/slice/strings.go
+</span></span><span class="line"><span class="cl">create mode <span class="m">100644</span> utils/str/str.go
+</span></span><span class="line"><span class="cl">create mode <span class="m">100644</span> vite.config.js
+</span></span><span class="line"><span class="cl">---------------- 构建前端库文件...:
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">public/static/main.umd.cjs    640.00 kB │ gzip: 211.13 kB
+</span></span><span class="line"><span class="cl">✓ built in 4.88s
+</span></span><span class="line"><span class="cl">npm notice
+</span></span><span class="line"><span class="cl">npm notice New minor version of npm available! 10.7.0 -&gt; 10.9.0
+</span></span><span class="line"><span class="cl">npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.9.0
+</span></span><span class="line"><span class="cl">npm notice To update run: npm install -g npm@10.9.0
+</span></span><span class="line"><span class="cl">npm notice
+</span></span><span class="line"><span class="cl">---------------- 添加工作目录...:
+</span></span><span class="line"><span class="cl">---------------- 执行基准测试...: 
+</span></span><span class="line"><span class="cl">2023-10-17 12:48:37, ERROR, Gower, Error Trace, <span class="o">{</span><span class="s2">&#34;error&#34;</span>: <span class="s2">&#34;record not found&#34;</span>, <span class="s2">&#34;sql&#34;</span>: <span class="s2">&#34;SELECT * FROM `admin
+</span></span></span><span class="line"><span class="cl"><span class="s2">_users` WHERE `admin_users`.`id` = 1 AND `admin_users`.`deleted_at` IS NULL ORDER BY `admin_users`.`id` LIMIT 1&#34;</span>, <span class="s2">&#34;elapsed&#34;</span>: 0, <span class="s2">&#34;rows&#34;</span>: 0<span class="o">}</span>
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">Benchmark/BenchmarkEncode-12             <span class="m">1896417</span>               628.9 ns/op
+</span></span><span class="line"><span class="cl">Benchmark/BenchmarkDecode-12             <span class="m">3177018</span>               389.5 ns/op
+</span></span><span class="line"><span class="cl">PASS
+</span></span><span class="line"><span class="cl">ok      my-project      25.313s
+</span></span></code></pre></div><h3 id="运行项目">运行项目</h3>
+<ul>
+<li>在 gradle 任务中找到 <code>my-project/Tasks/dev/Run</code>, 双击运行</li>
+<li>运行结果如下:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">&gt; Task :my-project:t0300GoBuild
+</span></span><span class="line"><span class="cl"><span class="c1"># go build -tags tmpl,static -o my-project.exe</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; Task :my-project:Run
+</span></span><span class="line"><span class="cl"><span class="c1"># my-project.exe run</span>
+</span></span><span class="line"><span class="cl">http://localhost:8080
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">BUILD SUCCESSFUL in 10s
+</span></span><span class="line"><span class="cl"><span class="m">6</span> actionable tasks: <span class="m">6</span> executed
+</span></span><span class="line"><span class="cl">00:57:32: 执行完成 <span class="s1">&#39;Run&#39;</span>。
+</span></span></code></pre></div><ul>
+<li>点击 <code>http://localhost:8080</code> 会打开浏览器, 并访问项目</li>
+</ul>
 
       </div>
       
@@ -261,6 +340,14 @@
     
         
 
+        
+          
+        
+
+      
+    
+        
+
       
     
         
@@ -274,7 +361,7 @@
 
 
 <footer id="article-footer">
-  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+  <time id="article-last-updated" datetime="2024-11-20"><i class="icon icon-calendar"></i>&nbsp;Last updated: 2024-11-20</time>
 
   
     <a id="article-prev-link" href="../../workspace/%E5%AE%89%E8%A3%85/"><i class="icon icon-prev icon-colored"></i> Prev</a>
@@ -291,7 +378,12 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#初始化项目">初始化项目</a></li>
+    <li>
+      <ul>
+        <li><a href="#新建一个-gower-项目">新建一个 Gower 项目</a></li>
+        <li><a href="#运行项目">运行项目</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -348,7 +440,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-20')
+        navigator.serviceWorker.register('/sw.js?2024-11-21')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

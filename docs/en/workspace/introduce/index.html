@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
@@ -8,7 +8,7 @@
 
 <title>Introduce · Go/Gin Gower Docs</title>
 
-<link rel="canonical" href="//localhost:1313/en/workspace/introduce/">
+<link rel="canonical" href="../../../en/workspace/introduce/">
 
 
 
@@ -81,9 +81,9 @@
       <ul role="menu" class="dropdown-menu">
         
           
-          <li role="menuitem"><a href="//localhost:1313/workspace/">中文</a></li>
+          <li role="menuitem"><a href="../../../workspace/%E4%BB%8B%E7%BB%8D/">中文</a></li>
           
-          <li role="menuitem"><a href="//localhost:1313/en/workspace/introduce/">English</a></li>
+          <li role="menuitem"><a href="../../../en/workspace/introduce/">English</a></li>
           
         
       </ul>
@@ -131,6 +131,62 @@
             
           </a>
         
+          
+          <a class="sidebar-link " href="../../../en/workspace/catalog/">
+            
+              Catalog
+            
+          </a>
+        <strong class="sidebar-section">Getting Started</strong>
+          
+          <a class="sidebar-link " href="../../../en/workspace/download/">
+            
+              Download
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../../en/workspace/using-goland/">
+            
+              Using GoLand
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../../en/workspace/using-vscode/">
+            
+              Using VSCode
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../../en/workspace/using-gradle/">
+            
+              Using Gradle
+            
+          </a>
+        <strong class="sidebar-section">Gower</strong>
+          
+          <a class="sidebar-link " href="../../../en/workspace/installation/">
+            
+              Installation
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../../en/workspace/initializing-project/">
+            
+              Initializing Project
+            
+          </a>
+        
+          
+          <a class="sidebar-link " href="../../../en/workspace/detailed-manual/">
+            
+              Detailed Manual
+            
+          </a>
+        
   </div>
 </aside>
 
@@ -147,7 +203,67 @@
       <div id="article-content">
         
         
-        <h2 id="introduce">Introduce</h2>
+        <p>Go/Gin Gower Workspace Directory is a workspace mode implemented by combining Go language with GOPATH.</p>
+<h2 id="go-workspace">Go Workspace</h2>
+<p>The <code>go.work</code> file is a new feature introduced in Go 1.18, used to manage multiple modules (modules) within a workspace. It allows you to develop and test multiple modules simultaneously within a single workspace without adding these modules as dependencies to each module&rsquo;s <code>go.mod</code> file.</p>
+<h3 id="workspace-concepts">Workspace Concepts</h3>
+<ul>
+<li><strong>Workspace</strong>: A directory containing multiple Go modules.</li>
+<li><strong><code>go.work</code> File</strong>: The configuration file that defines the workspace, specifying which modules belong to this workspace.</li>
+</ul>
+<h3 id="gowork-file-structure"><code>go.work</code> File Structure</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="k">go</span> <span class="mf">1.18</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">use</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">module1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">module2</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>go 1.18</code></strong>: Specifies the Go version.</li>
+<li><strong><code>use</code></strong>: Lists the paths of the modules included in the workspace.</li>
+</ul>
+<h3 id="creating-a-gowork-file">Creating a <code>go.work</code> File</h3>
+<ul>
+<li>
+<p>Use the command <code>go work init</code> to create a new <code>go.work</code> file and specify initial modules.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ go work init
+</span></span></code></pre></div></li>
+<li>
+<p>This will generate a <code>go.work</code> file.</p>
+</li>
+</ul>
+<h3 id="adding-and-removing-modules">Adding and Removing Modules</h3>
+<ul>
+<li><strong>Adding Modules</strong>: Use the <code>go work use</code> command to add new modules to the <code>go.work</code> file.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ go work use src/module1
+</span></span></code></pre></div></li>
+</ul>
+<blockquote>
+<p>Note: Before adding, the <code>src/module1</code> project already has a <code>go.mod</code> file.</p>
+</blockquote>
+<ul>
+<li><strong>Removing Modules</strong>: Use the <code>go work remove</code> command to remove modules from the <code>go.work</code> file.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ go work remove src/module1
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="gopath">GOPATH</h2>
+<p><code>GOPATH</code> is an important environment variable in the Go language, used to specify the default working directory for Go projects. It is primarily used to manage the organization, building, and dependencies of Go code. Here are the details about <code>GOPATH</code>:</p>
+<h3 id="1-concept-of-gopath">1. Concept of GOPATH</h3>
+<ul>
+<li><strong>GOPATH</strong>: An environment variable that specifies the default working directory for Go projects.</li>
+<li><strong>Working Directory</strong>: Under this directory, Go looks for and manages source code, binary files, and package objects.</li>
+</ul>
+<h3 id="2-structure-of-gopath">2. Structure of GOPATH</h3>
+<p>The <code>GOPATH</code> directory typically contains three subdirectories:</p>
+<ul>
+<li><strong><code>src</code></strong>: Stores source code files.</li>
+<li><strong><code>pkg</code></strong>: Stores third-party dependency packages.</li>
+<li><strong><code>bin</code></strong>: Stores compiled executable files.</li>
+</ul>
+<h3 id="3-setting-gopath">3. Setting GOPATH</h3>
+<p>In GoLand, you can set the project-level <code>GOPATH</code> in <code>Settings</code> -&gt; <code>Go</code> -&gt; <code>GOPATH</code>.</p>
+<h2 id="combined-usage">Combined Usage</h2>
+<p>When Workspace and GOPATH are used together, <code>go mod tidy</code> will download dependency packages to the <code>pkg/mod</code> directory. <code>go install</code> will install the executable files in the <code>bin</code> directory by default.</p>
 
       </div>
       
@@ -166,13 +282,24 @@
 
       
     
+        
+
+        
+          
+        
+
+        
+        
+      
 
 
 <footer id="article-footer">
-  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+  <time id="article-last-updated" datetime="2024-11-20"><i class="icon icon-calendar"></i>&nbsp;Last updated: 2024-11-20</time>
 
   
 
+  
+    <a id="article-next-link"  data-first-page=true  href="../../../workspace/catalog/">Next <i class="icon icon-next icon-colored"></i></a>
   
 </footer>
     </article>
@@ -182,7 +309,22 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduce">Introduce</a></li>
+    <li><a href="#go-workspace">Go Workspace</a>
+      <ul>
+        <li><a href="#workspace-concepts">Workspace Concepts</a></li>
+        <li><a href="#gowork-file-structure"><code>go.work</code> File Structure</a></li>
+        <li><a href="#creating-a-gowork-file">Creating a <code>go.work</code> File</a></li>
+        <li><a href="#adding-and-removing-modules">Adding and Removing Modules</a></li>
+      </ul>
+    </li>
+    <li><a href="#gopath">GOPATH</a>
+      <ul>
+        <li><a href="#1-concept-of-gopath">1. Concept of GOPATH</a></li>
+        <li><a href="#2-structure-of-gopath">2. Structure of GOPATH</a></li>
+        <li><a href="#3-setting-gopath">3. Setting GOPATH</a></li>
+      </ul>
+    </li>
+    <li><a href="#combined-usage">Combined Usage</a></li>
   </ul>
 </nav>
   </div>
@@ -250,7 +392,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-19')
+        navigator.serviceWorker.register('/sw.js?2024-11-21')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

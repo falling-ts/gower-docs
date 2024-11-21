@@ -6,7 +6,8 @@
 - title: Getting Started
   pages:
     - title: Download
-    - title: Using Goland
+    - title: Using GoLand
+    - title: Using VSCode
     - title: Using Gradle
 
 - title: Gower

@@ -76,7 +76,11 @@
       </button>
       <ul role="menu" class="dropdown-menu">
         
-          <li role="menuitem"><a href="#">中文</a></li>
+          
+          <li role="menuitem"><a href="../../workspace/gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">中文</a></li>
+          
+          <li role="menuitem"><a href="../../en/workspace/using-gradle/">English</a></li>
+          
         
       </ul>
     </div>
@@ -143,7 +147,15 @@
           
           <a class="sidebar-link " href="../../workspace/goland-%E4%BD%BF%E7%94%A8/">
             
-              Goland 使用
+              GoLand 使用
+            
+          </a>
+
+        
+          
+          <a class="sidebar-link " href="../../workspace/vscode-%E4%BD%BF%E7%94%A8/">
+            
+              VSCode 使用
             
           </a>
 
@@ -196,7 +208,21 @@
       <div id="article-content">
         
         
-        <h2 id="gradle-构建工具使用">Gradle 构建工具使用</h2>
+        <h2 id="gradle-任务配置">Gradle 任务配置</h2>
+<ul>
+<li>Gradle 项目的构建任务, 是直接写在 <code>build.gradle</code> 中, 方便自定义修改</li>
+<li>Gradle 构建时相关属性参数建议写在 <code>gradle.properties</code> 文件中</li>
+</ul>
+<h2 id="关于-ssh-远程文件部署插件的使用">关于 ssh 远程文件部署插件的使用</h2>
+<ul>
+<li>使用的插件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gradle" data-lang="gradle"><span class="line"><span class="cl"><span class="n">plugins</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">id</span> <span class="s2">&#34;org.hidetake.ssh&#34;</span> <span class="n">version</span> <span class="s2">&#34;2.11.2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><blockquote>
+<p>如果是工作区模式, 子项目的 <code>build.gradle</code> 不能再次引入 <code>org.hidetake.ssh</code></p>
+</blockquote>
 
       </div>
       
@@ -245,6 +271,14 @@
     
         
 
+        
+          
+        
+
+      
+    
+        
+
       
     
         
@@ -258,10 +292,10 @@
 
 
 <footer id="article-footer">
-  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+  <time id="article-last-updated" datetime="2024-11-20"><i class="icon icon-calendar"></i>&nbsp;Last updated: 2024-11-20</time>
 
   
-    <a id="article-prev-link" href="../../workspace/goland-%E4%BD%BF%E7%94%A8/"><i class="icon icon-prev icon-colored"></i> Prev</a>
+    <a id="article-prev-link" href="../../workspace/vscode-%E4%BD%BF%E7%94%A8/"><i class="icon icon-prev icon-colored"></i> Prev</a>
   
 
   
@@ -275,7 +309,8 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#gradle-构建工具使用">Gradle 构建工具使用</a></li>
+    <li><a href="#gradle-任务配置">Gradle 任务配置</a></li>
+    <li><a href="#关于-ssh-远程文件部署插件的使用">关于 ssh 远程文件部署插件的使用</a></li>
   </ul>
 </nav>
   </div>
@@ -332,7 +367,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-20')
+        navigator.serviceWorker.register('/sw.js?2024-11-21')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

@@ -9,10 +9,10 @@
     <atom:link href="/single/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>介绍</title>
-      <link>/zh/single/%E4%BB%8B%E7%BB%8D/</link>
+      <link>/single/%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/zh/single/%E4%BB%8B%E7%BB%8D/</guid>
-      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;</description>
+      <guid>/single/%E4%BB%8B%E7%BB%8D/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
