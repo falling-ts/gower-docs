@@ -1,5 +1,6 @@
 #sidebar {
   padding: 40px 0;
+
 }
 
 #sidebar .sticky {
@@ -7,6 +8,7 @@
   flex-direction: column;
   padding: 0 20px;
   overflow: auto;
+  height: 80vh !important;
 }
 
 .sidebar-section, .sidebar-link {
@@ -58,3 +60,5 @@
 .sidebar-link.current::before, .sidebar-link:hover::before {
   background: var(--color-anchor);
 }
+
+

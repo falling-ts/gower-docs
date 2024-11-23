@@ -366,3 +366,40 @@ body.offcanvas-sidebar-on, body.offcanvas-toc-on {
     transform: translateX(-100%);
   }
 }
+
+// 定义滚动条的基本样式
+$scrollbar-width: 4px;
+$scrollbar-color: #8a8;
+$scrollbar-thumb-color: #5a5;
+$scrollbar-track-color: rgba(0, 0, 0, 0);
+
+// 竖向滚动条
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+}
+
+// 横向滚动条
+::-webkit-scrollbar {
+  height: $scrollbar-width;
+}
+
+// 滚动条轨道
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-color;
+}
+
+// 滚动条滑块
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb-color;
+  border-radius: 5px;
+}
+
+// 滚动条滑块悬停时的样式
+::-webkit-scrollbar-thumb:hover {
+  background: darken($scrollbar-thumb-color, 10%);
+}
+
+// 滚动条滑块激活时的样式
+::-webkit-scrollbar-thumb:active {
+  background: darken($scrollbar-thumb-color, 20%);
+}

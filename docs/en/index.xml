@@ -44,17 +44,17 @@
     </item>
     <item>
       <title>Introduce</title>
-      <link>/en/single/introduce/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/en/single/introduce/</guid>
-      <description>&lt;h2 id=&#34;introduce&#34;&gt;Introduce&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>Introduce</title>
       <link>/en/workspace/introduce/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/en/workspace/introduce/</guid>
       <description>&lt;p&gt;Go/Gin Gower Workspace Directory is a workspace mode implemented by combining Go language with GOPATH.&lt;/p&gt;&#xA;&lt;h2 id=&#34;go-workspace&#34;&gt;Go Workspace&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;code&gt;go.work&lt;/code&gt; file is a new feature introduced in Go 1.18, used to manage multiple modules (modules) within a workspace. It allows you to develop and test multiple modules simultaneously within a single workspace without adding these modules as dependencies to each module&amp;rsquo;s &lt;code&gt;go.mod&lt;/code&gt; file.&lt;/p&gt;&#xA;&lt;h3 id=&#34;workspace-concepts&#34;&gt;Workspace Concepts&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Workspace&lt;/strong&gt;: A directory containing multiple Go modules.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;code&gt;go.work&lt;/code&gt; File&lt;/strong&gt;: The configuration file that defines the workspace, specifying which modules belong to this workspace.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;gowork-file-structure&#34;&gt;&lt;code&gt;go.work&lt;/code&gt; File Structure&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.18&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;module1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;module2&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;code&gt;go 1.18&lt;/code&gt;&lt;/strong&gt;: Specifies the Go version.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;code&gt;use&lt;/code&gt;&lt;/strong&gt;: Lists the paths of the modules included in the workspace.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;creating-a-gowork-file&#34;&gt;Creating a &lt;code&gt;go.work&lt;/code&gt; File&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Use the command &lt;code&gt;go work init&lt;/code&gt; to create a new &lt;code&gt;go.work&lt;/code&gt; file and specify initial modules.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Preface</title>
+      <link>/en/single/preface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/en/single/preface/</guid>
+      <description></description>
     </item>
     <item>
       <title>Using GoLand</title>

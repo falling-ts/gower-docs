@@ -2,7 +2,7 @@
 title: 介绍
 url: "/workspace/介绍"
 aliases:
-- "/workspace"
+- "/workspace/"
 ---
 
 Go/Gin Gower Workspace 工作目录, 是基于 Go 语言的 Workspace 与 GOPATH 相结合实现的工作区模式.

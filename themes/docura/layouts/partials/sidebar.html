@@ -10,7 +10,7 @@
   <span class="btn-close"><i class="icon icon-close"></i></span>
 
   <div class="sticky">
-    {{- range $group := $data -}}
+    {{- range $i, $group := $data -}}
       <strong class="sidebar-section">{{ $group.title }}</strong>
 
       {{- range $index, $page := $group.pages -}}
@@ -18,8 +18,8 @@
         {{- $isActivePage := eq $urlPageSlug $pageSlug -}}
 
         {{ if eq $currentLang $defaultLang }}
-          {{ $href := printf "/%s/%s/" $.Section $pageSlug }}
-          <a class="sidebar-link {{ if $isActivePage }}current{{ end }}" href="{{ $href }}">
+          {{ $href := printf "/%s/%s/#%s-%d-%d" $.Section $pageSlug $defaultLang $i $index }}
+          <a id="{{ $defaultLang }}-{{ $i }}-{{ $index }}" class="sidebar-link {{ if $isActivePage }}current{{ end }}" href="{{ $href }}">
             {{ if and (eq $index 0) $group.replaceFirstPageTitle }}
               {{ $group.replaceFirstPageTitle }}
             {{ else }}
@@ -28,8 +28,8 @@
           </a>
 
         {{ else }}
-          {{ $href := printf "/%s/%s/%s/" $currentLang $.Section $pageSlug }}
-          <a class="sidebar-link {{ if $isActivePage }}current{{ end }}" href="{{ $href }}">
+          {{ $href := printf "/%s/%s/%s/#%s-%d-%d" $currentLang $.Section $pageSlug $currentLang $i $index }}
+          <a id="{{ $currentLang }}-{{ $i }}-{{ $index }}" class="sidebar-link {{ if $isActivePage }}current{{ end }}" href="{{ $href }}">
             {{ if and (eq $index 0) $group.replaceFirstPageTitle }}
               {{ $group.replaceFirstPageTitle }}
             {{ else }}
