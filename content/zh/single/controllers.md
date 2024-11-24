@@ -105,6 +105,8 @@ route.GET("/", []any{
 
 ### 创建基础 Web 控制器
 
+> 注意: 如果是在工作区模式中开发, 请进入子项目的命令终端中, 执行 `gower make`, 否则无法找到 `go.mod` 文件
+
 ```shell
 $ gower make --controller TestAa
 或
