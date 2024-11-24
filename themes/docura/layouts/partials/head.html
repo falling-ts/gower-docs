@@ -1,7 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ .Page.Params.description | default .Site.Params.description | .RenderString }}">
+<meta name="description" content="{{ .Page.Params.description | default .Site.Params.description | .RenderString }}">
 <meta name="author" content="{{ .Site.Params.author.name }}">
+<meta name="keywords" content="{{ .Page.Params.keywords | default .Site.Params.keywords | .RenderString }}">
+
+<meta name="msvalidate.01" content="619B654428B21D3DEFD979542A5D45CE" />
 
 <title>{{ if .IsHome }}{{ .Site.Title | .RenderString }} · {{ .Site.Params.description | .RenderString }}{{ else }}{{ .Title | .RenderString }} · {{ .Site.Title | .RenderString }}{{ end }}</title>
 

@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/en/single/advanced-data-processing/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -15,6 +16,7 @@
                 />
   </url><url>
     <loc>/en/single/auth-jwt-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -27,6 +29,7 @@
                 />
   </url><url>
     <loc>/en/single/cache-cache-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -39,6 +42,7 @@
                 />
   </url><url>
     <loc>/en/single/caddy-web-server/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -76,6 +80,7 @@
                 />
   </url><url>
     <loc>/en/single/commands/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -88,6 +93,7 @@
                 />
   </url><url>
     <loc>/en/single/config-configuration-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -100,6 +106,7 @@
                 />
   </url><url>
     <loc>/en/single/configuration/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -112,6 +119,7 @@
                 />
   </url><url>
     <loc>/en/single/controllers/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -124,6 +132,7 @@
                 />
   </url><url>
     <loc>/en/single/cookie-cookie-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -136,6 +145,7 @@
                 />
   </url><url>
     <loc>/en/single/database/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -148,6 +158,7 @@
                 />
   </url><url>
     <loc>/en/single/db-database-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -173,6 +184,7 @@
                 />
   </url><url>
     <loc>/en/single/development-release/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -185,6 +197,7 @@
                 />
   </url><url>
     <loc>/en/single/directory-structure/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -210,6 +223,7 @@
                 />
   </url><url>
     <loc>/en/single/exception-exception-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -222,6 +236,7 @@
                 />
   </url><url>
     <loc>/en/single/exceptions/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -234,6 +249,7 @@
                 />
   </url><url>
     <loc>/en/single/frontend-build/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -246,7 +262,7 @@
                 />
   </url><url>
     <loc>/en/</loc>
-    <lastmod>2024-11-23T23:47:21+08:00</lastmod>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -272,6 +288,7 @@
                 />
   </url><url>
     <loc>/en/single/installation/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -310,6 +327,7 @@
                 />
   </url><url>
     <loc>/en/single/log-viewer/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -322,6 +340,7 @@
                 />
   </url><url>
     <loc>/en/single/logger-logging-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -334,6 +353,7 @@
                 />
   </url><url>
     <loc>/en/single/packaging/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -346,6 +366,7 @@
                 />
   </url><url>
     <loc>/en/single/passwd-password-hashing-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -358,7 +379,7 @@
                 />
   </url><url>
     <loc>/en/single/preface/</loc>
-    <lastmod>2024-11-23T23:47:21+08:00</lastmod>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -371,6 +392,7 @@
                 />
   </url><url>
     <loc>/en/single/production-release/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -383,6 +405,7 @@
                 />
   </url><url>
     <loc>/en/single/release-preface/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -395,6 +418,7 @@
                 />
   </url><url>
     <loc>/en/single/request-validator/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -407,6 +431,7 @@
                 />
   </url><url>
     <loc>/en/single/response-response-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -419,6 +444,7 @@
                 />
   </url><url>
     <loc>/en/single/responses/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -431,6 +457,7 @@
                 />
   </url><url>
     <loc>/en/single/route-routing-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -443,6 +470,7 @@
                 />
   </url><url>
     <loc>/en/single/routing/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -455,7 +483,7 @@
                 />
   </url><url>
     <loc>/en/single/</loc>
-    <lastmod>2024-11-23T23:47:21+08:00</lastmod>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -468,6 +496,7 @@
                 />
   </url><url>
     <loc>/en/single/symcrypt-symmetric-encryption-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -492,6 +521,7 @@
                 />
   </url><url>
     <loc>/en/single/templates/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -504,6 +534,7 @@
                 />
   </url><url>
     <loc>/en/single/testing/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -516,6 +547,7 @@
                 />
   </url><url>
     <loc>/en/single/testing-release/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -528,6 +560,7 @@
                 />
   </url><url>
     <loc>/en/single/translate-translation-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -540,6 +573,7 @@
                 />
   </url><url>
     <loc>/en/single/upload-upload-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -591,6 +625,7 @@
                 />
   </url><url>
     <loc>/en/single/util-utility-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -603,6 +638,7 @@
                 />
   </url><url>
     <loc>/en/single/utils/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -615,6 +651,7 @@
                 />
   </url><url>
     <loc>/en/single/validator-validation-service/</loc>
+    <lastmod>2024-11-24T19:38:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
