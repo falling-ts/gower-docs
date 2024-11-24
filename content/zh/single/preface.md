@@ -1,8 +1,6 @@
 ---
 title: 前言
 url: "/single/前言"
-aliases:
-  - "/single/"
 ---
 
 > 注: 由于方便书写代码, 文档标点默认使用英文标点.
@@ -25,7 +23,7 @@ Gower 是一个基于 Go/Gin 的快速开发架构, 内部尽可能减少包间�
 
 ## 当前服务功能列表
 
-```
+```yaml
 auth: JWT 无状态的用户校验服务
 cache: 缓存服务
 config: 配置服务
@@ -51,7 +49,7 @@ validator: 请求参数校验服务
 
 前端技术栈列表
 
-```
+```yaml
 vite
 typescript
 vue

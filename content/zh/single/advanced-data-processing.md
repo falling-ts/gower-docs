@@ -109,7 +109,7 @@ type Rule map[string]any
 >
 > any, 分为 string, map, struct, func 四大类
 
-```
+```yaml
 string 时, 代表 req 的字段
 
 map 时, 代表 app.Rule 本身, 意思是又有一套 Rule 规则, 处理模型中的模型数据, 实现一个递归处理, 理论上无限深层处理.

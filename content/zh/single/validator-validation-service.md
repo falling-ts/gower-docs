@@ -5,7 +5,7 @@ url: "/single/validator-验证服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/go-playground/validator/v10"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/validator-验证服务"
 
 ### 服务标识符
 
-```
+```yaml
 "validator"
 ```
 

@@ -11,7 +11,7 @@ url: "/single/response-响应服务"
 
 ### 服务标识符
 
-```
+```yaml
 "response"
 ```
 
@@ -28,13 +28,13 @@ P.Register("response", Depends{"auth", "cookie", "util", "config"}, func(ss ...s
 
 ## 依赖的服务
 
-```
+```yaml
 "auth", "cookie", "util", "config"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 # 响应数据键类型: CamelType, camelType, snake_type
 RES_KEY_TYPE=snake_type
 # 请求的数据响应 MIME, 多个用英文逗号分割

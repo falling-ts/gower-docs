@@ -5,7 +5,7 @@ url: "/single/passwd-密码哈希服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/alexedwards/argon2id"
 "golang.org/x/crypto/bcrypt"
 "golang.org/x/crypto/scrypt"
@@ -15,7 +15,7 @@ url: "/single/passwd-密码哈希服务"
 
 ### 服务标识符
 
-```
+```yaml
 "passwd"
 ```
 
@@ -33,13 +33,13 @@ P.Register("passwd", func() (Depends, Resolve) {
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "exception"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 # 密码哈希模式: bcrypt, argon2id, scrypt
 PASSWD_MODE=argon2id
 ```

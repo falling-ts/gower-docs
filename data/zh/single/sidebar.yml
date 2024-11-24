@@ -38,7 +38,7 @@
 
 - title: 第三方应用
   pages:
-    - title: Caddy
+    - title: Caddy Web 服务器
     - title: 日志查看器
     - title: 数据库
 

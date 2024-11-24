@@ -5,7 +5,7 @@ url: "/single/cookie-cookie服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/gin-gonic/gin"
 ```
 > 实际使用了 `*gin.Context` 的 cookie 功能, 简化了调用, 内置了加密和解密.
@@ -14,7 +14,7 @@ url: "/single/cookie-cookie服务"
 
 ### 服务标识符
 
-```
+```yaml
 "cookie"
 ```
 
@@ -30,13 +30,13 @@ P.Register("cookie", Depends{"config", "sym-crypt"}, func(ss ...services.Service
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "sym-crypt"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 # 域, 关系到 Cookie 设置
 APP_DOMAIN=localhost
 ```

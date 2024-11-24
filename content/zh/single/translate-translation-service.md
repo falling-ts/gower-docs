@@ -13,7 +13,7 @@ url: "/single/translate-翻译服务"
 
 ### 服务标识符
 
-```
+```yaml
 "translate"
 ```
 
@@ -31,7 +31,7 @@ P.Register("translate", func() (Depends, Resolve) {
 
 ## 依赖的服务
 
-```
+```yaml
 "config"
 ```
 

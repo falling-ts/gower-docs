@@ -5,7 +5,7 @@ url: "/single/symcrypt-对称加密服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "crypto/aes"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/symcrypt-对称加密服务"
 
 ### 服务标识符
 
-```
+```yaml
 "sym-crypt"
 ```
 
@@ -29,13 +29,13 @@ P.Register("sym-crypt", Depends{"config"}, func(ss ...services.Service) services
 
 ## 依赖的服务
 
-```
+```yaml
 "config"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 APP_KEY=mXQ60jZG61/bfdW2hI8bWJZNrpN1RZhwRjiM7pY7/Nk=
 ```
 

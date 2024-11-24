@@ -5,7 +5,7 @@ url: "/single/cache-缓存服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/patrickmn/go-cache"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/cache-缓存服务"
 
 ### 服务标识符
 
-```
+```yaml
 "cache"
 ```
 
@@ -32,13 +32,13 @@ P.Register("cache", []string{"config"}, func(ss ...services.Service) services.Se
 
 ## 依赖的服务
 
-```
+```yaml
 "config"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 # 默认缓存生存时间, 默认 5m, 或者写成 300s
 CACHE_EXPIRE=300s
 # 定期清理过期缓存的时间, 默认 10m, 或者写成 600s

@@ -5,7 +5,7 @@ url: "/single/upload-上传服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/gin-gonic/gin"
 ```
 > 实际使用 `*gin.Context` 上传功能
@@ -14,7 +14,7 @@ url: "/single/upload-上传服务"
 
 ### 服务标识符
 
-```
+```yaml
 "upload"
 ```
 
@@ -30,13 +30,13 @@ P.Register("upload", Depends{"config", "util"}, func(ss ...services.Service) ser
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "util"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 # 上传的仓库
 UPLOAD_STORAGE=local
 # 本地仓库 Host

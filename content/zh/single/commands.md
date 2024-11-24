@@ -5,7 +5,7 @@ url: "/single/命令"
 
 ## 使用的开源库
 
-```
+```yaml
 github.com/urfave/cli/v2
 ```
 
@@ -21,7 +21,7 @@ $ gower
 
 输出以下内容
 
-```
+```yaml
 NAME:
    gower - 命令行工具.
 
@@ -80,7 +80,7 @@ $ gower run help
 
 输出:
 
-```
+```yaml
 NAME:
    gower run - 启动应用
 

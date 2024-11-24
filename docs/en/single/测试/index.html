@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
+<meta name="author" content="falling-ts">
+
+<title>Testing · Go/Gin Gower Docs</title>
+
+<link rel="canonical" href="//localhost:1313/en/single/%E6%B5%8B%E8%AF%95/">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../scss/base.css" integrity="">
+
+
+
+<link rel="stylesheet" href="../../../scss/theme/default.css" integrity="">
+
+
+
+  <link rel="preconnect" href="https://-dsn.algolia.net" crossorigin />
+  
+  <link rel="stylesheet" href="../../../scss/component/docsearch.css" integrity=""/>
+
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../img/icon/favicon.ico">
+<link rel="icon" href="../../../img/icon/icon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../img/icon/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../img/icon/icon-180.png" sizes="180x180">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00000000"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-00000000');
+</script>
+
+
+  
+
+  </head>
+  <body>
+    <header id="site-header">
+  
+  <div id="site-header-brand">
+    <a href="../../../">Go/Gin Gower Docs</a>
+  </div>
+
+  
+  <div id="site-header-controls">
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="theme selector">
+        <i class="icon icon-brightness"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        <li role="menuitem"><button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button></li>
+      </ul>
+    </div>
+
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="language selector">
+        <i class="icon icon-translate"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        
+          
+          <li role="menuitem"><a href="//localhost:1313/single/%E6%B5%8B%E8%AF%95/">中文</a></li>
+          
+          <li role="menuitem"><a href="//localhost:1313/en/single/%E6%B5%8B%E8%AF%95/">English</a></li>
+          
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div id="site-header-menu">
+    <nav>
+      <ul>
+        
+        
+        
+          
+          <li><a href="../../../" ><svg t="1731853730249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="883" width="200" height="200"><path d="M466.48888853 821.99893333A182.13546667 182.13546667 0 0 1 512 463.64444479a182.0444448 182.0444448 0 0 1 45.51111147 358.35448854V918.75555519h227.5555552v-364.08888853a45.51111147 45.51111147 0 0 1 45.51111146-45.51111147h17.93137707L512 206.27911146 175.4908448 509.15555519H193.42222187a45.51111147 45.51111147 0 0 1 45.51111146 45.51111147v364.08888853h91.02222187a45.51111147 45.51111147 0 0 1 0 91.02222294H193.42222187a45.51111147 45.51111147 0 0 1-45.5111104-45.51111147v-364.08888853H56.88888853c-41.68817813 0-61.44-51.4275552-30.44693333-79.32586667l455.11111147-409.6a45.51111147 45.51111147 0 0 1 60.89386666 0l455.11111147 409.6C1028.55111147 548.75022186 1008.79928853 600.17777813 967.11111147 600.17777813h-91.02222294v364.08888853a45.51111147 45.51111147 0 0 1-45.5111104 45.51111147h-318.57777813a45.51111147 45.51111147 0 0 1-45.51111147-45.51111147v-142.26773333zM512 736.71111146a91.02222187 91.02222187 0 1 0 0-182.0444448 91.02222187 91.02222187 0 0 0 0 182.0444448z" fill="#2c2c2c" p-id="884"></path></svg>Home</a></li>
+        
+          
+          <li><a href="../../../workspace/%E4%BB%8B%E7%BB%8D/" ><svg t="1731853749882" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1030" width="200" height="200"><path d="M941.48136843 320.91117833a58.73434594 58.73434594 0 0 0-29.56686-50.74309969L546.72469031 61.2022452a58.73434594 58.73434594 0 0 0-58.73434594 1e-8l-363.59044406 211.76239406a58.73434594 58.73434594 0 0 0-28.76811094 51.14247468v420.72729094a58.73434594 58.73434594 0 0 0 29.56592344 50.74309969l363.59231906 208.16614594a58.73434594 58.73434594 0 0 0 58.33403344 0l365.18981812-210.9627075a58.73434594 58.73434594 0 0 0 29.56686-51.14247469zM516.75939281 122.73315177l307.65453375 176.20303781-141.84086625 90.69745406-134.24993344-76.71371156a59.93247001 59.93247001 0 0 0-59.9315325 0L353.74134843 392.8305177l-142.24024125-91.4971425z m0 567.76284281l-119.86494094-69.12184125 114.27181875-70.72121437L623.43746437 630.56352364zM382.11008437 453.96111177l105.480885-61.53090656v105.48182249a25.17186281 25.17186281 0 0 0 0 2.79656063h-4.39499719l-100.68745031 64.32840562z m161.81804437 44.35029094V388.83489458l112.27400719 63.12840563V581.41792302L542.72812967 501.50827583a27.56904844 27.56904844 0 0 0 2e-8-4.79437312zM163.55550562 351.27678833l150.6308625 95.49276469v170.60803968a59.93247001 59.93247001 0 0 0 29.96623501 51.54278719l140.64180561 79.90964813v173.00616375l-319.64046561-183.39365907z m389.56199344 570.9587775V749.23033958l141.44055468-79.90964719a59.93247001 59.93247001 0 0 0 29.9671725-51.94216219V445.57049146l150.23148844-95.09245313V737.6428452z m0 0" fill="#2c2c2c" p-id="1031"></path></svg>Workspace Mode</a></li>
+        
+          
+          <li><a href="../../../single/%E5%89%8D%E8%A8%80/" ><svg t="1731853765799" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1314" width="200" height="200"><path d="M512 57.5822816c-262.31427627 0-475.75105173 213.43493973-475.75105173 475.75105173 0 262.3491392 213.40191147 475.75105173 475.75105173 475.75105173S987.75105173 795.68247253 987.75105173 533.33333333C987.75105173 271.01905706 774.3491392 57.5822816 512 57.5822816zM512 940.8177184c-224.6992608 0-407.48438507-182.81815147-407.48438507-407.48438507 0-224.6992608 182.78328853-407.48438507 407.48438507-407.48438507 224.66623253 0 407.48438507 182.78328853 407.48438507 407.48438507C919.48438507 757.99956586 736.66623253 940.8177184 512 940.8177184z" fill="#2c2c2c" p-id="1315"></path><path d="M512 362.667584c-94.1054304 0-170.667584 76.56031893-170.667584 170.66574933s76.56031893 170.667584 170.667584 170.667584 170.667584-76.56031893 170.667584-170.667584S606.1054304 362.667584 512 362.667584z" fill="#2c2c2c" p-id="1316"></path></svg>Single Mode</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  
+  <div id="site-header-search"></div>
+</header>
+    
+<div id="site-main-content-wrapper">
+  
+  
+    
+
+
+<aside id="sidebar">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+
+  <div class="sticky"><strong class="sidebar-section">Introduction</strong>
+          
+          <a id="en-0-0" class="sidebar-link " href="../../../en/single/preface/#en-0-0">
+            
+              Preface
+            
+          </a>
+        
+          
+          <a id="en-0-1" class="sidebar-link " href="../../../en/single/installation/#en-0-1">
+            
+              Installation
+            
+          </a>
+        
+          
+          <a id="en-0-2" class="sidebar-link " href="../../../en/single/directory-structure/#en-0-2">
+            
+              Directory Structure
+            
+          </a>
+        <strong class="sidebar-section">Basic Content</strong>
+          
+          <a id="en-1-0" class="sidebar-link " href="../../../en/single/routing/#en-1-0">
+            
+              Routing
+            
+          </a>
+        
+          
+          <a id="en-1-1" class="sidebar-link " href="../../../en/single/controllers/#en-1-1">
+            
+              Controllers
+            
+          </a>
+        
+          
+          <a id="en-1-2" class="sidebar-link " href="../../../en/single/request-validator/#en-1-2">
+            
+              Request Validator
+            
+          </a>
+        
+          
+          <a id="en-1-3" class="sidebar-link " href="../../../en/single/exceptions/#en-1-3">
+            
+              Exceptions
+            
+          </a>
+        
+          
+          <a id="en-1-4" class="sidebar-link " href="../../../en/single/responses/#en-1-4">
+            
+              Responses
+            
+          </a>
+        <strong class="sidebar-section">Frontend Related</strong>
+          
+          <a id="en-2-0" class="sidebar-link " href="../../../en/single/templates/#en-2-0">
+            
+              Templates
+            
+          </a>
+        
+          
+          <a id="en-2-1" class="sidebar-link " href="../../../en/single/frontend-build/#en-2-1">
+            
+              Frontend Build
+            
+          </a>
+        
+          
+          <a id="en-2-2" class="sidebar-link " href="../../../en/single/packaging/#en-2-2">
+            
+              Packaging
+            
+          </a>
+        <strong class="sidebar-section">Service Introduction</strong>
+          
+          <a id="en-3-0" class="sidebar-link " href="../../../en/single/auth-jwt-service/#en-3-0">
+            
+              auth-JWT Service
+            
+          </a>
+        
+          
+          <a id="en-3-1" class="sidebar-link " href="../../../en/single/cache-cache-service/#en-3-1">
+            
+              cache-Cache Service
+            
+          </a>
+        
+          
+          <a id="en-3-2" class="sidebar-link " href="../../../en/single/config-configuration-service/#en-3-2">
+            
+              config-Configuration Service
+            
+          </a>
+        
+          
+          <a id="en-3-3" class="sidebar-link " href="../../../en/single/cookie-cookie-service/#en-3-3">
+            
+              cookie-Cookie Service
+            
+          </a>
+        
+          
+          <a id="en-3-4" class="sidebar-link " href="../../../en/single/db-database-service/#en-3-4">
+            
+              db-Database Service
+            
+          </a>
+        
+          
+          <a id="en-3-5" class="sidebar-link " href="../../../en/single/exception-exception-service/#en-3-5">
+            
+              exception-Exception Service
+            
+          </a>
+        
+          
+          <a id="en-3-6" class="sidebar-link " href="../../../en/single/logger-logging-service/#en-3-6">
+            
+              logger-Logging Service
+            
+          </a>
+        
+          
+          <a id="en-3-7" class="sidebar-link " href="../../../en/single/passwd-password-hashing-service/#en-3-7">
+            
+              passwd-Password Hashing Service
+            
+          </a>
+        
+          
+          <a id="en-3-8" class="sidebar-link " href="../../../en/single/response-response-service/#en-3-8">
+            
+              response-Response Service
+            
+          </a>
+        
+          
+          <a id="en-3-9" class="sidebar-link " href="../../../en/single/route-routing-service/#en-3-9">
+            
+              route-Routing Service
+            
+          </a>
+        
+          
+          <a id="en-3-10" class="sidebar-link " href="../../../en/single/symcrypt-symmetric-encryption-service/#en-3-10">
+            
+              symcrypt-Symmetric Encryption Service
+            
+          </a>
+        
+          
+          <a id="en-3-11" class="sidebar-link " href="../../../en/single/translate-translation-service/#en-3-11">
+            
+              translate-Translation Service
+            
+          </a>
+        
+          
+          <a id="en-3-12" class="sidebar-link " href="../../../en/single/upload-upload-service/#en-3-12">
+            
+              upload-Upload Service
+            
+          </a>
+        
+          
+          <a id="en-3-13" class="sidebar-link " href="../../../en/single/util-utility-service/#en-3-13">
+            
+              util-Utility Service
+            
+          </a>
+        
+          
+          <a id="en-3-14" class="sidebar-link " href="../../../en/single/validator-validation-service/#en-3-14">
+            
+              validator-Validation Service
+            
+          </a>
+        <strong class="sidebar-section">Third-party Applications</strong>
+          
+          <a id="en-4-0" class="sidebar-link " href="../../../en/single/caddy-web-server/#en-4-0">
+            
+              Caddy Web Server
+            
+          </a>
+        
+          
+          <a id="en-4-1" class="sidebar-link " href="../../../en/single/log-viewer/#en-4-1">
+            
+              Log Viewer
+            
+          </a>
+        
+          
+          <a id="en-4-2" class="sidebar-link " href="../../../en/single/database/#en-4-2">
+            
+              Database
+            
+          </a>
+        <strong class="sidebar-section">Release</strong>
+          
+          <a id="en-5-0" class="sidebar-link " href="../../../en/single/release-preface/#en-5-0">
+            
+              Release Preface
+            
+          </a>
+        
+          
+          <a id="en-5-1" class="sidebar-link " href="../../../en/single/development-release/#en-5-1">
+            
+              Development Release
+            
+          </a>
+        
+          
+          <a id="en-5-2" class="sidebar-link " href="../../../en/single/testing-release/#en-5-2">
+            
+              Testing Release
+            
+          </a>
+        
+          
+          <a id="en-5-3" class="sidebar-link " href="../../../en/single/production-release/#en-5-3">
+            
+              Production Release
+            
+          </a>
+        <strong class="sidebar-section">Other</strong>
+          
+          <a id="en-6-0" class="sidebar-link " href="../../../en/single/configuration/#en-6-0">
+            
+              Configuration
+            
+          </a>
+        
+          
+          <a id="en-6-1" class="sidebar-link " href="../../../en/single/testing/#en-6-1">
+            
+              Testing
+            
+          </a>
+        
+          
+          <a id="en-6-2" class="sidebar-link " href="../../../en/single/utils/#en-6-2">
+            
+              Utils
+            
+          </a>
+        
+          
+          <a id="en-6-3" class="sidebar-link " href="../../../en/single/commands/#en-6-3">
+            
+              Commands
+            
+          </a>
+        
+          
+          <a id="en-6-4" class="sidebar-link " href="../../../en/single/advanced-data-processing/#en-6-4">
+            
+              Advanced Data Processing
+            
+          </a>
+        
+  </div>
+</aside>
+
+  
+  <main>
+    <article id="article">
+      <nav id="article-nav">
+  <button id="article-nav-menu-btn"><i class="icon icon-menu"></i> On this section</button>
+  <button id="article-nav-toc-btn"><i class="icon icon-toc"></i> On this page</button>
+</nav>
+      <header id="article-header">
+  <h1>Testing</h1>
+</header>
+      <div id="article-content">
+        
+        
+        <h2 id="写测试">写测试</h2>
+<p><code>tests/tests.go</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">auth</span>     <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Auth</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cache</span>    <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Cache</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">config</span>   <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Config</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">db</span>       <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">DB</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">excp</span>     <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Exception</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">passwd</span>   <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Passwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span>      <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Response</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">route</span>    <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Route</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">symCrypt</span> <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">SymCrypt</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">_</span>        <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Translate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">util</span>     <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Util</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//TODO: 继续添加需要测试服务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span></code></pre></div><p>以 <code>cache</code> 为例吧</p>
+<p>创建 <code>tests/cache.go</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">tests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;testing&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;time&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestCache</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;----------------TestCache 开始----------------&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 获取断言工具
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">assert</span> <span class="o">:=</span> <span class="nf">getAssert</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 设置缓存与取缓存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">cache</span><span class="p">.</span><span class="nf">SetDefault</span><span class="p">(</span><span class="s">&#34;test-key&#34;</span><span class="p">,</span> <span class="s">&#34;123&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">value</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">cache</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;test-key&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 断言成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">assert</span><span class="p">.</span><span class="nf">True</span><span class="p">(</span><span class="nx">ok</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="s">&#34;123&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 删除缓存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">cache</span><span class="p">.</span><span class="nf">Delete</span><span class="p">(</span><span class="s">&#34;test-key&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 删除后, 断言不成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="p">=</span> <span class="nx">cache</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;test-key&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">assert</span><span class="p">.</span><span class="nf">False</span><span class="p">(</span><span class="nx">ok</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 测试过期时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">cache</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;test-key&#34;</span><span class="p">,</span> <span class="s">&#34;123&#34;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="p">=</span> <span class="nx">cache</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;test-key&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">assert</span><span class="p">.</span><span class="nf">False</span><span class="p">(</span><span class="nx">ok</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;----------------TestCache 结束----------------&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="写基准测试">写基准测试</h2>
+<h3 id="声明服务">声明服务</h3>
+<p><code>tests/benchmarks/benchmarks.go</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">auth</span>     <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Auth</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cache</span>    <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Cache</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">config</span>   <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Config</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">passwd</span>   <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Passwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">route</span>    <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Route</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">symCrypt</span> <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">SymCrypt</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span>      <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Response</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//TODO: 继续声明你需要基准测试的服务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="写基准测试-1">写基准测试</h3>
+<p><code>tests/benchmarks/cache.go</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">benchmarks</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;testing&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">BenchmarkCache</span><span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cache</span><span class="p">.</span><span class="nf">SetDefault</span><span class="p">(</span><span class="s">&#34;key&#34;</span><span class="p">,</span> <span class="s">&#34;test&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">cache</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;key&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cache</span><span class="p">.</span><span class="nf">Delete</span><span class="p">(</span><span class="s">&#34;key&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="汇总所有测试">汇总所有测试</h2>
+<p>在 <code>main_test.go</code> 中进行汇总</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Test</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestAuth&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestAuth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestCache&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestConfig&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestConfig</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestDB&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestDB</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestException&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestException</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestPasswd&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TextPasswd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestRoute&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestRoute</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestSymCrypt&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestSymCrypt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestTrans&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestTrans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;TestUtil&#34;</span><span class="p">,</span> <span class="nx">tests</span><span class="p">.</span><span class="nx">TestUtil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//TODO: 继续写你的测试
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Benchmark</span><span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute01&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute01</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute02&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute03&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute03</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute04&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute04</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute05&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute05</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute06&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute06</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute07&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute07</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute08&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute08</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute09&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute09</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkRoute10&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkRoute10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkAuthSign&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkAuthSign</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkAuthCheck&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkAuthCheck</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkCache&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkCache</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkConfig&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkConfig</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkConfigGet&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkConfigGet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkPasswd&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkPasswd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkEncode&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkEncode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;BenchmarkDecode&#34;</span><span class="p">,</span> <span class="nx">benchmarks</span><span class="p">.</span><span class="nx">BenchmarkDecode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//TODO: 继续写你的基准测试
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><h2 id="运行测试">运行测试</h2>
+<h3 id="运行测试-1">运行测试</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go <span class="nb">test</span>
+</span></span></code></pre></div><h3 id="运行基准测试">运行基准测试</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go <span class="nb">test</span> -bench<span class="o">=</span>Benchmark
+</span></span></code></pre></div>
+      </div>
+      
+
+
+
+
+
+
+
+
+  
+  
+  
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+
+
+<footer id="article-footer">
+  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+
+  
+    <a id="article-prev-link" href="../../../single/advanced-data-processing/"><i class="icon icon-prev icon-colored"></i> Prev</a>
+  
+
+  
+</footer>
+    </article>
+    <aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    <strong><i class="icon icon-toc"></i> On this page</strong>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#写测试">写测试</a></li>
+    <li><a href="#写基准测试">写基准测试</a>
+      <ul>
+        <li><a href="#声明服务">声明服务</a></li>
+        <li><a href="#写基准测试-1">写基准测试</a></li>
+      </ul>
+    </li>
+    <li><a href="#汇总所有测试">汇总所有测试</a></li>
+    <li><a href="#运行测试">运行测试</a>
+      <ul>
+        <li><a href="#运行测试-1">运行测试</a></li>
+        <li><a href="#运行基准测试">运行基准测试</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</aside>
+  </main>
+</div>
+
+    <footer id="site-footer">
+  
+  <div id="site-footer-copyright">
+    <a href="https://falling-ts.github.io" target="_blank">
+      <i class="icon icon-copyright"></i> 2024 falling-ts
+    </a>
+  </div>
+
+  
+  <div id="site-footer-social">
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-fund">
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-love">
+    Made with <i class="icon icon-love icon-colored"></i> &nbsp;from&nbsp;<a href="https://docura.github.io/" target="_blank">Docura</a>
+  </div>
+</footer>
+    
+
+
+
+
+
+
+<script type="text/javascript" src="../../../js/base.min.js"></script>
+
+
+
+  
+  <script src="../../../js/component/docsearch.min.js"></script>
+  <script type="application/javascript">
+      docsearch({
+          container: '#site-header-search',
+          appId: '',
+          indexName: '',
+          apiKey: '',
+      });
+  </script>
+
+
+<script type="application/javascript">
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?2024-11-24')
+            .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
+    }
+</script>
+  </body>
+</html>

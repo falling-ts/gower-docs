@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
+<meta name="author" content="falling-ts">
+
+<title>Release Preface · Go/Gin Gower Docs</title>
+
+<link rel="canonical" href="../../../en/single/release-preface/">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../scss/base.css" integrity="">
+
+
+
+<link rel="stylesheet" href="../../../scss/theme/default.css" integrity="">
+
+
+
+  <link rel="preconnect" href="https://-dsn.algolia.net" crossorigin />
+  
+  <link rel="stylesheet" href="../../../scss/component/docsearch.css" integrity=""/>
+
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../img/icon/favicon.ico">
+<link rel="icon" href="../../../img/icon/icon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../img/icon/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../img/icon/icon-180.png" sizes="180x180">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00000000"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-00000000');
+</script>
+
+
+  
+
+  </head>
+  <body>
+    <header id="site-header">
+  
+  <div id="site-header-brand">
+    <a href="../../../">Go/Gin Gower Docs</a>
+  </div>
+
+  
+  <div id="site-header-controls">
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="theme selector">
+        <i class="icon icon-brightness"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        <li role="menuitem"><button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button></li>
+      </ul>
+    </div>
+
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="language selector">
+        <i class="icon icon-translate"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        
+          
+          <li role="menuitem"><a href="../../../single/%E5%8F%91%E5%B8%83%E5%89%8D%E8%A8%80/">中文</a></li>
+          
+          <li role="menuitem"><a href="../../../en/single/release-preface/">English</a></li>
+          
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div id="site-header-menu">
+    <nav>
+      <ul>
+        
+        
+        
+          
+          <li><a href="../../../" ><svg t="1731853730249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="883" width="200" height="200"><path d="M466.48888853 821.99893333A182.13546667 182.13546667 0 0 1 512 463.64444479a182.0444448 182.0444448 0 0 1 45.51111147 358.35448854V918.75555519h227.5555552v-364.08888853a45.51111147 45.51111147 0 0 1 45.51111146-45.51111147h17.93137707L512 206.27911146 175.4908448 509.15555519H193.42222187a45.51111147 45.51111147 0 0 1 45.51111146 45.51111147v364.08888853h91.02222187a45.51111147 45.51111147 0 0 1 0 91.02222294H193.42222187a45.51111147 45.51111147 0 0 1-45.5111104-45.51111147v-364.08888853H56.88888853c-41.68817813 0-61.44-51.4275552-30.44693333-79.32586667l455.11111147-409.6a45.51111147 45.51111147 0 0 1 60.89386666 0l455.11111147 409.6C1028.55111147 548.75022186 1008.79928853 600.17777813 967.11111147 600.17777813h-91.02222294v364.08888853a45.51111147 45.51111147 0 0 1-45.5111104 45.51111147h-318.57777813a45.51111147 45.51111147 0 0 1-45.51111147-45.51111147v-142.26773333zM512 736.71111146a91.02222187 91.02222187 0 1 0 0-182.0444448 91.02222187 91.02222187 0 0 0 0 182.0444448z" fill="#2c2c2c" p-id="884"></path></svg>Home</a></li>
+        
+          
+          <li><a href="../../../workspace/%E4%BB%8B%E7%BB%8D/" ><svg t="1731853749882" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1030" width="200" height="200"><path d="M941.48136843 320.91117833a58.73434594 58.73434594 0 0 0-29.56686-50.74309969L546.72469031 61.2022452a58.73434594 58.73434594 0 0 0-58.73434594 1e-8l-363.59044406 211.76239406a58.73434594 58.73434594 0 0 0-28.76811094 51.14247468v420.72729094a58.73434594 58.73434594 0 0 0 29.56592344 50.74309969l363.59231906 208.16614594a58.73434594 58.73434594 0 0 0 58.33403344 0l365.18981812-210.9627075a58.73434594 58.73434594 0 0 0 29.56686-51.14247469zM516.75939281 122.73315177l307.65453375 176.20303781-141.84086625 90.69745406-134.24993344-76.71371156a59.93247001 59.93247001 0 0 0-59.9315325 0L353.74134843 392.8305177l-142.24024125-91.4971425z m0 567.76284281l-119.86494094-69.12184125 114.27181875-70.72121437L623.43746437 630.56352364zM382.11008437 453.96111177l105.480885-61.53090656v105.48182249a25.17186281 25.17186281 0 0 0 0 2.79656063h-4.39499719l-100.68745031 64.32840562z m161.81804437 44.35029094V388.83489458l112.27400719 63.12840563V581.41792302L542.72812967 501.50827583a27.56904844 27.56904844 0 0 0 2e-8-4.79437312zM163.55550562 351.27678833l150.6308625 95.49276469v170.60803968a59.93247001 59.93247001 0 0 0 29.96623501 51.54278719l140.64180561 79.90964813v173.00616375l-319.64046561-183.39365907z m389.56199344 570.9587775V749.23033958l141.44055468-79.90964719a59.93247001 59.93247001 0 0 0 29.9671725-51.94216219V445.57049146l150.23148844-95.09245313V737.6428452z m0 0" fill="#2c2c2c" p-id="1031"></path></svg>Workspace Mode</a></li>
+        
+          
+          <li><a href="../../../single/%E5%89%8D%E8%A8%80/" ><svg t="1731853765799" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1314" width="200" height="200"><path d="M512 57.5822816c-262.31427627 0-475.75105173 213.43493973-475.75105173 475.75105173 0 262.3491392 213.40191147 475.75105173 475.75105173 475.75105173S987.75105173 795.68247253 987.75105173 533.33333333C987.75105173 271.01905706 774.3491392 57.5822816 512 57.5822816zM512 940.8177184c-224.6992608 0-407.48438507-182.81815147-407.48438507-407.48438507 0-224.6992608 182.78328853-407.48438507 407.48438507-407.48438507 224.66623253 0 407.48438507 182.78328853 407.48438507 407.48438507C919.48438507 757.99956586 736.66623253 940.8177184 512 940.8177184z" fill="#2c2c2c" p-id="1315"></path><path d="M512 362.667584c-94.1054304 0-170.667584 76.56031893-170.667584 170.66574933s76.56031893 170.667584 170.667584 170.667584 170.667584-76.56031893 170.667584-170.667584S606.1054304 362.667584 512 362.667584z" fill="#2c2c2c" p-id="1316"></path></svg>Single Mode</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  
+  <div id="site-header-search"></div>
+</header>
+    
+<div id="site-main-content-wrapper">
+  
+  
+    
+
+
+<aside id="sidebar">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+
+  <div class="sticky"><strong class="sidebar-section">Introduction</strong>
+          
+          <a id="en-0-0" class="sidebar-link " href="../../../en/single/preface/#en-0-0">
+            
+              Preface
+            
+          </a>
+        
+          
+          <a id="en-0-1" class="sidebar-link " href="../../../en/single/installation/#en-0-1">
+            
+              Installation
+            
+          </a>
+        
+          
+          <a id="en-0-2" class="sidebar-link " href="../../../en/single/directory-structure/#en-0-2">
+            
+              Directory Structure
+            
+          </a>
+        <strong class="sidebar-section">Basic Content</strong>
+          
+          <a id="en-1-0" class="sidebar-link " href="../../../en/single/routing/#en-1-0">
+            
+              Routing
+            
+          </a>
+        
+          
+          <a id="en-1-1" class="sidebar-link " href="../../../en/single/controllers/#en-1-1">
+            
+              Controllers
+            
+          </a>
+        
+          
+          <a id="en-1-2" class="sidebar-link " href="../../../en/single/request-validator/#en-1-2">
+            
+              Request Validator
+            
+          </a>
+        
+          
+          <a id="en-1-3" class="sidebar-link " href="../../../en/single/exceptions/#en-1-3">
+            
+              Exceptions
+            
+          </a>
+        
+          
+          <a id="en-1-4" class="sidebar-link " href="../../../en/single/responses/#en-1-4">
+            
+              Responses
+            
+          </a>
+        <strong class="sidebar-section">Frontend Related</strong>
+          
+          <a id="en-2-0" class="sidebar-link " href="../../../en/single/templates/#en-2-0">
+            
+              Templates
+            
+          </a>
+        
+          
+          <a id="en-2-1" class="sidebar-link " href="../../../en/single/frontend-build/#en-2-1">
+            
+              Frontend Build
+            
+          </a>
+        
+          
+          <a id="en-2-2" class="sidebar-link " href="../../../en/single/packaging/#en-2-2">
+            
+              Packaging
+            
+          </a>
+        <strong class="sidebar-section">Service Introduction</strong>
+          
+          <a id="en-3-0" class="sidebar-link " href="../../../en/single/auth-jwt-service/#en-3-0">
+            
+              auth-JWT Service
+            
+          </a>
+        
+          
+          <a id="en-3-1" class="sidebar-link " href="../../../en/single/cache-cache-service/#en-3-1">
+            
+              cache-Cache Service
+            
+          </a>
+        
+          
+          <a id="en-3-2" class="sidebar-link " href="../../../en/single/config-configuration-service/#en-3-2">
+            
+              config-Configuration Service
+            
+          </a>
+        
+          
+          <a id="en-3-3" class="sidebar-link " href="../../../en/single/cookie-cookie-service/#en-3-3">
+            
+              cookie-Cookie Service
+            
+          </a>
+        
+          
+          <a id="en-3-4" class="sidebar-link " href="../../../en/single/db-database-service/#en-3-4">
+            
+              db-Database Service
+            
+          </a>
+        
+          
+          <a id="en-3-5" class="sidebar-link " href="../../../en/single/exception-exception-service/#en-3-5">
+            
+              exception-Exception Service
+            
+          </a>
+        
+          
+          <a id="en-3-6" class="sidebar-link " href="../../../en/single/logger-logging-service/#en-3-6">
+            
+              logger-Logging Service
+            
+          </a>
+        
+          
+          <a id="en-3-7" class="sidebar-link " href="../../../en/single/passwd-password-hashing-service/#en-3-7">
+            
+              passwd-Password Hashing Service
+            
+          </a>
+        
+          
+          <a id="en-3-8" class="sidebar-link " href="../../../en/single/response-response-service/#en-3-8">
+            
+              response-Response Service
+            
+          </a>
+        
+          
+          <a id="en-3-9" class="sidebar-link " href="../../../en/single/route-routing-service/#en-3-9">
+            
+              route-Routing Service
+            
+          </a>
+        
+          
+          <a id="en-3-10" class="sidebar-link " href="../../../en/single/symcrypt-symmetric-encryption-service/#en-3-10">
+            
+              symcrypt-Symmetric Encryption Service
+            
+          </a>
+        
+          
+          <a id="en-3-11" class="sidebar-link " href="../../../en/single/translate-translation-service/#en-3-11">
+            
+              translate-Translation Service
+            
+          </a>
+        
+          
+          <a id="en-3-12" class="sidebar-link " href="../../../en/single/upload-upload-service/#en-3-12">
+            
+              upload-Upload Service
+            
+          </a>
+        
+          
+          <a id="en-3-13" class="sidebar-link " href="../../../en/single/util-utility-service/#en-3-13">
+            
+              util-Utility Service
+            
+          </a>
+        
+          
+          <a id="en-3-14" class="sidebar-link " href="../../../en/single/validator-validation-service/#en-3-14">
+            
+              validator-Validation Service
+            
+          </a>
+        <strong class="sidebar-section">Third-party Applications</strong>
+          
+          <a id="en-4-0" class="sidebar-link " href="../../../en/single/caddy-web-server/#en-4-0">
+            
+              Caddy Web Server
+            
+          </a>
+        
+          
+          <a id="en-4-1" class="sidebar-link " href="../../../en/single/log-viewer/#en-4-1">
+            
+              Log Viewer
+            
+          </a>
+        
+          
+          <a id="en-4-2" class="sidebar-link " href="../../../en/single/database/#en-4-2">
+            
+              Database
+            
+          </a>
+        <strong class="sidebar-section">Release</strong>
+          
+          <a id="en-5-0" class="sidebar-link current" href="../../../en/single/release-preface/#en-5-0">
+            
+              Release Preface
+            
+          </a>
+        
+          
+          <a id="en-5-1" class="sidebar-link " href="../../../en/single/development-release/#en-5-1">
+            
+              Development Release
+            
+          </a>
+        
+          
+          <a id="en-5-2" class="sidebar-link " href="../../../en/single/testing-release/#en-5-2">
+            
+              Testing Release
+            
+          </a>
+        
+          
+          <a id="en-5-3" class="sidebar-link " href="../../../en/single/production-release/#en-5-3">
+            
+              Production Release
+            
+          </a>
+        <strong class="sidebar-section">Other</strong>
+          
+          <a id="en-6-0" class="sidebar-link " href="../../../en/single/configuration/#en-6-0">
+            
+              Configuration
+            
+          </a>
+        
+          
+          <a id="en-6-1" class="sidebar-link " href="../../../en/single/testing/#en-6-1">
+            
+              Testing
+            
+          </a>
+        
+          
+          <a id="en-6-2" class="sidebar-link " href="../../../en/single/utils/#en-6-2">
+            
+              Utils
+            
+          </a>
+        
+          
+          <a id="en-6-3" class="sidebar-link " href="../../../en/single/commands/#en-6-3">
+            
+              Commands
+            
+          </a>
+        
+          
+          <a id="en-6-4" class="sidebar-link " href="../../../en/single/advanced-data-processing/#en-6-4">
+            
+              Advanced Data Processing
+            
+          </a>
+        
+  </div>
+</aside>
+
+  
+  <main>
+    <article id="article">
+      <nav id="article-nav">
+  <button id="article-nav-menu-btn"><i class="icon icon-menu"></i> On this section</button>
+  <button id="article-nav-toc-btn"><i class="icon icon-toc"></i> On this page</button>
+</nav>
+      <header id="article-header">
+  <h1>Release Preface</h1>
+</header>
+      <div id="article-content">
+        
+        
+        <p>Sure, here is the translation:</p>
+<hr>
+<h2 id="release-categories">Release Categories</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">Development Release</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">Test Release</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">Production Release</span><span class="w">
+</span></span></span></code></pre></div><p>The corresponding environment files for the frontend are:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">.env.dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">.env.test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">.env.prod</span><span class="w">
+</span></span></span></code></pre></div><p>The corresponding environment files for the backend are:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">envs/.env.dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">envs/.env.test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">envs/.env.prod</span><span class="w">
+</span></span></span></code></pre></div><h2 id="using-gradle-for-release">Using Gradle for Release</h2>
+<p>Find the <code>gradle.properties</code> file in the subproject, configure the compilation environments for the three environments, and provide the root connection information for the server.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-env" data-lang="env"><span class="line"><span class="cl"><span class="p">;</span> Skip Go tests, uncomment to not run go <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> <span class="nv">skipTest</span> <span class="o">=</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Build program name, after running gower create my-project, it will automatically change to <span class="nv">bin</span> <span class="o">=</span> my-project
+</span></span><span class="line"><span class="cl"><span class="nv">bin</span> <span class="o">=</span> gower
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Development environment
+</span></span><span class="line"><span class="cl">dev.npmBuildEnv <span class="o">=</span> dev
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Development Go <span class="nb">test</span> tags
+</span></span><span class="line"><span class="cl">dev.goTestTags <span class="o">=</span> tmpl,static
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Development Go build tags
+</span></span><span class="line"><span class="cl">dev.goBuildTags <span class="o">=</span> tmpl,static
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Disable cgo in development environment
+</span></span><span class="line"><span class="cl">dev.cgoEnabled <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Development environment system
+</span></span><span class="line"><span class="cl">dev.goos <span class="o">=</span> windows
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Development environment architecture
+</span></span><span class="line"><span class="cl">dev.goarch <span class="o">=</span> amd64
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment
+</span></span><span class="line"><span class="cl">test.npmBuildEnv <span class="o">=</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test Go <span class="nb">test</span> tags
+</span></span><span class="line"><span class="cl">test.goTestTags <span class="o">=</span> test,tmpl,static
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test Go build tags
+</span></span><span class="line"><span class="cl">test.goBuildTags <span class="o">=</span> test,tmpl,static
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Disable cgo in <span class="nb">test</span> environment
+</span></span><span class="line"><span class="cl">test.cgoEnabled <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment system
+</span></span><span class="line"><span class="cl">test.goos <span class="o">=</span> linux
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment architecture
+</span></span><span class="line"><span class="cl">test.goarch <span class="o">=</span> amd64
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment SSH host
+</span></span><span class="line"><span class="cl">test.host <span class="o">=</span> 192.168.101.101
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment SSH port
+</span></span><span class="line"><span class="cl">test.port <span class="o">=</span> <span class="m">22</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment SSH user
+</span></span><span class="line"><span class="cl">test.user <span class="o">=</span> root
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Test environment SSH password
+</span></span><span class="line"><span class="cl">test.password <span class="o">=</span> root
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment
+</span></span><span class="line"><span class="cl">prod.npmBuildEnv <span class="o">=</span> prod
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production Go <span class="nb">test</span> tags
+</span></span><span class="line"><span class="cl">prod.goTestTags <span class="o">=</span> prod,tmpl,static
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production Go build tags
+</span></span><span class="line"><span class="cl">prod.goBuildTags <span class="o">=</span> prod,tmpl,static
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Disable cgo in production environment
+</span></span><span class="line"><span class="cl">prod.cgoEnabled <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment system
+</span></span><span class="line"><span class="cl">prod.goos <span class="o">=</span> linux
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment architecture
+</span></span><span class="line"><span class="cl">prod.goarch <span class="o">=</span> amd64
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment SSH host
+</span></span><span class="line"><span class="cl">prod.host <span class="o">=</span> 192.168.101.101
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment SSH port
+</span></span><span class="line"><span class="cl">prod.port <span class="o">=</span> <span class="m">22</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment SSH user
+</span></span><span class="line"><span class="cl">prod.user <span class="o">=</span> root
+</span></span><span class="line"><span class="cl"><span class="p">;</span> Production environment SSH password
+</span></span><span class="line"><span class="cl">prod.password <span class="o">=</span> root
+</span></span></code></pre></div><h2 id="using-command-line-rclone-for-release">Using Command Line Rclone for Release</h2>
+<p>Rclone is a file synchronization and transfer tool implemented in Go. It can upload the code for the test and production versions to the corresponding servers.</p>
+<p>It also supports detecting and uploading modified files, meaning that after the first upload, only modified files will be uploaded in subsequent uploads, greatly improving work efficiency.</p>
+<h3 id="installation-and-usage">Installation and Usage</h3>
+<p>Run the script to install and configure Rclone.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./cmd/init-rclone
+</span></span></code></pre></div><p>The output will be as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span>------------- <span class="l">rclone installing... ----------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">go</span><span class="p">:</span><span class="w"> </span><span class="l">downloading github.com/rclone/rclone v1.62.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">go</span><span class="p">:</span><span class="w"> </span><span class="l">downloading github.com/buengese/sgzip v0.1.1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">go</span><span class="p">:</span><span class="w"> </span><span class="l">downloading github.com/gabriel-vasile/mimetype v1.4.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">go</span><span class="p">:</span><span class="w"> </span><span class="l">downloading github.com/Max-Sum/base32768</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span>------------- <span class="l">rclone installed ----------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">rclone v1.62.2-DEV</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">os/version</span><span class="p">:</span><span class="w"> </span><span class="l">Microsoft Windows 11 Pro 21H2 (64 bit)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">os/kernel</span><span class="p">:</span><span class="w"> </span><span class="m">10.0.22000.1696</span><span class="w"> </span><span class="l">Build 22000.1696.1696 (x86_64)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">os/type</span><span class="p">:</span><span class="w"> </span><span class="l">windows</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">os/arch</span><span class="p">:</span><span class="w"> </span><span class="l">amd64</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">go/version</span><span class="p">:</span><span class="w"> </span><span class="l">go1.20</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">go/linking</span><span class="p">:</span><span class="w"> </span><span class="l">static</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">go/tags</span><span class="p">:</span><span class="w"> </span><span class="l">none</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span>------------- <span class="l">please create test and prod ssh server ----------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kc">No</span><span class="w"> </span><span class="l">remotes found, make a new one?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kc">n</span><span class="l">) New remote</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">s) Set configuration password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">q) Quit config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kc">n</span><span class="l">/s/q&gt; </span><span class="w">
+</span></span></span></code></pre></div><h3 id="configure-test-and-prod-remotes">Configure test and prod Remotes</h3>
+<h4 id="input-n">Input <code>n</code></h4>
+<h4 id="input-name-test">Input name test</h4>
+<h4 id="select-39-ssh-server-type">Select 39 SSH server type</h4>
+<h4 id="input-server-ip">Input server IP</h4>
+<h4 id="input-login-account-root">Input login account root</h4>
+<h4 id="input-ssh-port-22">Input SSH port 22</h4>
+<h4 id="input-password-or-select-xxxpem">Input password or select xxx.pem</h4>
+<h4 id="press-enter-to-create-the-test-remote">Press Enter to create the test remote</h4>
+<h4 id="then-input-n-to-create-the-prod-remote">Then input <code>n</code> to create the prod remote</h4>
+<h4 id="the-result-will-be-as-follows">The result will be as follows:</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Current remotes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">Name                 Type</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">====                 ====</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">prod                 sftp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">test                 sftp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">e) Edit existing remote</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kc">n</span><span class="l">) New remote</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">d) Delete remote</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">r) Rename remote</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">c) Copy remote</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">s) Set configuration password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">q) Quit config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">e/n/d/r/c/s/q&gt;</span><span class="w">
+</span></span></span></code></pre></div>
+      </div>
+      
+
+
+
+
+
+
+
+
+  
+  
+  
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+      
+    
+        
+
+        
+          
+        
+
+        
+        
+      
+
+
+<footer id="article-footer">
+  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+
+  
+    <a id="article-prev-link" href="../../../single/database/"><i class="icon icon-prev icon-colored"></i> Prev</a>
+  
+
+  
+    <a id="article-next-link"  href="../../../single/development-release/">Next <i class="icon icon-next icon-colored"></i></a>
+  
+</footer>
+    </article>
+    <aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    <strong><i class="icon icon-toc"></i> On this page</strong>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#release-categories">Release Categories</a></li>
+    <li><a href="#using-gradle-for-release">Using Gradle for Release</a></li>
+    <li><a href="#using-command-line-rclone-for-release">Using Command Line Rclone for Release</a>
+      <ul>
+        <li><a href="#installation-and-usage">Installation and Usage</a></li>
+        <li><a href="#configure-test-and-prod-remotes">Configure test and prod Remotes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</aside>
+  </main>
+</div>
+
+    <footer id="site-footer">
+  
+  <div id="site-footer-copyright">
+    <a href="https://falling-ts.github.io" target="_blank">
+      <i class="icon icon-copyright"></i> 2024 falling-ts
+    </a>
+  </div>
+
+  
+  <div id="site-footer-social">
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-fund">
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-love">
+    Made with <i class="icon icon-love icon-colored"></i> &nbsp;from&nbsp;<a href="https://docura.github.io/" target="_blank">Docura</a>
+  </div>
+</footer>
+    
+
+
+
+
+
+
+<script type="text/javascript" src="../../../js/base.min.js"></script>
+
+
+
+  
+  <script src="../../../js/component/docsearch.min.js"></script>
+  <script type="application/javascript">
+      docsearch({
+          container: '#site-header-search',
+          appId: '',
+          indexName: '',
+          apiKey: '',
+      });
+  </script>
+
+
+<script type="application/javascript">
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?2024-11-24')
+            .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
+    }
+</script>
+  </body>
+</html>

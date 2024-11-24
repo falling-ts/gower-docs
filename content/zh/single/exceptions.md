@@ -191,4 +191,4 @@ func (e *Exception) Set(arg any) services.Exception {
     return e
 }
 ```
-> 除了 *exception.Service \`json:"-"\` 和前面两个 case 不能修改以外, 你可以调整 Exception 其他参数. 注意增删改这些参数的同时, 要修改 Set 函数, 实现正确处理结构体实例的逻辑. 例如 Msg 改为 Message, 同时 `e.Msg = arg.(string)` 改为 `e.Message = arg.(string)`
+> 除了 *exception.Service `json:"-"` 和前面两个 case 不能修改以外, 你可以调整 Exception 其他参数. 注意增删改这些参数的同时, 要修改 Set 函数, 实现正确处理结构体实例的逻辑. 例如 Msg 改为 Message, 同时 `e.Msg = arg.(string)` 改为 `e.Message = arg.(string)`

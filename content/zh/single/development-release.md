@@ -8,7 +8,7 @@ url: "/single/发布开发"
 ## 普通发布
 
 ```shell
-$ ./run-dev
+$ ./docker/run-dev
 ```
 > windows 使用 run-dev.cmd
 >
@@ -55,15 +55,15 @@ docker logs -f gower
 
 ### 使用的文件包括
 
-```
+```yaml
 docker-compose.yaml
-Dockerfile
+./docker/Dockerfile
 ```
 
 ## 全发布
 
 ```shell
-$ ./run-dev-full
+$ ./docker/run-dev-full
 ```
 
 ### 步骤
@@ -77,10 +77,18 @@ $ ./run-dev-full
 
 ### 使用的文件包括
 
-```
+```yaml
 docker-compose.yaml
-Docker-development-full
-entrypoint-dev-full.sh
+./docker/Docker-development-full
+./docker/entrypoint-dev-full.sh
 ```
 
 > entrypoint-dev-full.sh 是 docker 运行的入口文件
+
+## 使用 Gradle 运行开发
+
+找到子项目中的 `gower-work/${your-project}/Tasks/dev/Run`, 双击运行
+
+## 使用 GoLand 运行配置, 支持断点调试
+
+找到 Gower Run 运行配置, 修改工作目录, 并选择模块, 最后 Debug 运行, 就可以进行断点调试了.

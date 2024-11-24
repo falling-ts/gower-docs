@@ -5,7 +5,7 @@ url: "/single/logger-日志服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "go.uber.org/zap"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/logger-日志服务"
 
 ### 服务标识符
 
-```
+```yaml
 "logger"
 ```
 
@@ -31,13 +31,13 @@ P.Register("logger", func() (Depends, Resolve) {
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "util"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 # 三种模式: development, production, test
 APP_MODE=development
 

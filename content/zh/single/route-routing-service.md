@@ -5,7 +5,7 @@ url: "/single/route-路由服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/gin-gonic/gin"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/route-路由服务"
 
 ### 服务标识符
 
-```
+```yaml
 "route"
 ```
 
@@ -31,7 +31,7 @@ P.Register("route", func() (Depends, Resolve) {
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "exception", "db", "response", "util"
 ```
 

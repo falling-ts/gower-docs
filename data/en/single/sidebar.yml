@@ -38,7 +38,7 @@
 
 - title: Third-party Applications
   pages:
-    - title: Caddy
+    - title: Caddy Web Server
     - title: Log Viewer
     - title: Database
 

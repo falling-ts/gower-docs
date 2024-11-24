@@ -16,7 +16,7 @@ url: "/single/发布测试"
 ### 运行发布脚本
 
 ```shell
-$ ./release-test
+$ ./docker/release-test
 ```
 
 #### 步骤
@@ -31,8 +31,8 @@ $ ./release-test
 
 ```shell
 $ cd /go/bin
-$ chmod +x run.sh
-$ ./run.sh
+$ chmod +x docker/run.sh
+$ ./docker/run.sh
 ```
 
 #### 步骤
@@ -45,7 +45,7 @@ $ ./run.sh
 ## 全发布
 
 ```shell
-$ ./release-test-full
+$ ./docker/release-test-full
 ```
 > 上传源码至服务器
 
@@ -53,20 +53,24 @@ $ ./release-test-full
 
 ```shell
 $ cd /go/src
-$ chmod +x run-test-full.sh
-$ ./run-test-full.sh
+$ chmod +x docker/run-test-full.sh
+$ ./docker/run-test-full.sh
 ```
 
 ## 简单发布
 
 ```shell
-$ ./release-test-simple
+$ ./cmd/release-test
 ```
 
 ### 登录服务器
 
 ```shell
 $ cd /go/bin
-$ chmod +x run-simple.sh
-$ ./run-simple.sh
+$ chmod +x cmd/run.sh
+$ .cmd/run.sh
 ```
+
+## 使用 Gradle 实现简单发布
+
+找到子项目中的 `gower-work/${your-project}/Tasks/test/ReleaseTest`, 双击运行

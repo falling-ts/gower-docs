@@ -49,7 +49,7 @@ admin_password = admin
 建议使用脚本运行应用
 
 ```shell
-$ ./run-dev
+$ ./docker/run-dev
 ```
 
 ### 访问 Grafana

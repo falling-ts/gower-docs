@@ -45,7 +45,7 @@ func (s *Service) GET(relativePath string, handlers ...services.Handler) service
 func(*gin.Context)
 func(*gin.Context) error
 func(*gin.Context) services.Response
-func(*gin.COntext) (services.Response, error)
+func(*gin.Context) (services.Response, error)
 func()
 func() error
 func() services.Response
@@ -57,7 +57,7 @@ func() (services.Response, error)
 
 ### 使用反射:
 
-断言不到固定类型, 只能反射是什么参数, 返回了什么, 性能有所丢失, 实际不会产生多少影响的.
+断言不到固定类型, 只能反射是什么参数, 返回了什么, 性能有所丢失.
 
 ```go
 func(req *requests.IndexRequest, user *models.User, article models.Article, req requests.OtherRequest) (services.Response, error, string, any, any, any)

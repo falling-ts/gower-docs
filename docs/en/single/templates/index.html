@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
+<meta name="author" content="falling-ts">
+
+<title>Templates · Go/Gin Gower Docs</title>
+
+<link rel="canonical" href="../../../en/single/templates/">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../scss/base.css" integrity="">
+
+
+
+<link rel="stylesheet" href="../../../scss/theme/default.css" integrity="">
+
+
+
+  <link rel="preconnect" href="https://-dsn.algolia.net" crossorigin />
+  
+  <link rel="stylesheet" href="../../../scss/component/docsearch.css" integrity=""/>
+
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../img/icon/favicon.ico">
+<link rel="icon" href="../../../img/icon/icon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../img/icon/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../img/icon/icon-180.png" sizes="180x180">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00000000"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-00000000');
+</script>
+
+
+  
+
+  </head>
+  <body>
+    <header id="site-header">
+  
+  <div id="site-header-brand">
+    <a href="../../../">Go/Gin Gower Docs</a>
+  </div>
+
+  
+  <div id="site-header-controls">
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="theme selector">
+        <i class="icon icon-brightness"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        <li role="menuitem"><button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button></li>
+      </ul>
+    </div>
+
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="language selector">
+        <i class="icon icon-translate"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        
+          
+          <li role="menuitem"><a href="../../../single/%E6%A8%A1%E6%9D%BF/">中文</a></li>
+          
+          <li role="menuitem"><a href="../../../en/single/templates/">English</a></li>
+          
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div id="site-header-menu">
+    <nav>
+      <ul>
+        
+        
+        
+          
+          <li><a href="../../../" ><svg t="1731853730249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="883" width="200" height="200"><path d="M466.48888853 821.99893333A182.13546667 182.13546667 0 0 1 512 463.64444479a182.0444448 182.0444448 0 0 1 45.51111147 358.35448854V918.75555519h227.5555552v-364.08888853a45.51111147 45.51111147 0 0 1 45.51111146-45.51111147h17.93137707L512 206.27911146 175.4908448 509.15555519H193.42222187a45.51111147 45.51111147 0 0 1 45.51111146 45.51111147v364.08888853h91.02222187a45.51111147 45.51111147 0 0 1 0 91.02222294H193.42222187a45.51111147 45.51111147 0 0 1-45.5111104-45.51111147v-364.08888853H56.88888853c-41.68817813 0-61.44-51.4275552-30.44693333-79.32586667l455.11111147-409.6a45.51111147 45.51111147 0 0 1 60.89386666 0l455.11111147 409.6C1028.55111147 548.75022186 1008.79928853 600.17777813 967.11111147 600.17777813h-91.02222294v364.08888853a45.51111147 45.51111147 0 0 1-45.5111104 45.51111147h-318.57777813a45.51111147 45.51111147 0 0 1-45.51111147-45.51111147v-142.26773333zM512 736.71111146a91.02222187 91.02222187 0 1 0 0-182.0444448 91.02222187 91.02222187 0 0 0 0 182.0444448z" fill="#2c2c2c" p-id="884"></path></svg>Home</a></li>
+        
+          
+          <li><a href="../../../workspace/%E4%BB%8B%E7%BB%8D/" ><svg t="1731853749882" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1030" width="200" height="200"><path d="M941.48136843 320.91117833a58.73434594 58.73434594 0 0 0-29.56686-50.74309969L546.72469031 61.2022452a58.73434594 58.73434594 0 0 0-58.73434594 1e-8l-363.59044406 211.76239406a58.73434594 58.73434594 0 0 0-28.76811094 51.14247468v420.72729094a58.73434594 58.73434594 0 0 0 29.56592344 50.74309969l363.59231906 208.16614594a58.73434594 58.73434594 0 0 0 58.33403344 0l365.18981812-210.9627075a58.73434594 58.73434594 0 0 0 29.56686-51.14247469zM516.75939281 122.73315177l307.65453375 176.20303781-141.84086625 90.69745406-134.24993344-76.71371156a59.93247001 59.93247001 0 0 0-59.9315325 0L353.74134843 392.8305177l-142.24024125-91.4971425z m0 567.76284281l-119.86494094-69.12184125 114.27181875-70.72121437L623.43746437 630.56352364zM382.11008437 453.96111177l105.480885-61.53090656v105.48182249a25.17186281 25.17186281 0 0 0 0 2.79656063h-4.39499719l-100.68745031 64.32840562z m161.81804437 44.35029094V388.83489458l112.27400719 63.12840563V581.41792302L542.72812967 501.50827583a27.56904844 27.56904844 0 0 0 2e-8-4.79437312zM163.55550562 351.27678833l150.6308625 95.49276469v170.60803968a59.93247001 59.93247001 0 0 0 29.96623501 51.54278719l140.64180561 79.90964813v173.00616375l-319.64046561-183.39365907z m389.56199344 570.9587775V749.23033958l141.44055468-79.90964719a59.93247001 59.93247001 0 0 0 29.9671725-51.94216219V445.57049146l150.23148844-95.09245313V737.6428452z m0 0" fill="#2c2c2c" p-id="1031"></path></svg>Workspace Mode</a></li>
+        
+          
+          <li><a href="../../../single/%E5%89%8D%E8%A8%80/" ><svg t="1731853765799" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1314" width="200" height="200"><path d="M512 57.5822816c-262.31427627 0-475.75105173 213.43493973-475.75105173 475.75105173 0 262.3491392 213.40191147 475.75105173 475.75105173 475.75105173S987.75105173 795.68247253 987.75105173 533.33333333C987.75105173 271.01905706 774.3491392 57.5822816 512 57.5822816zM512 940.8177184c-224.6992608 0-407.48438507-182.81815147-407.48438507-407.48438507 0-224.6992608 182.78328853-407.48438507 407.48438507-407.48438507 224.66623253 0 407.48438507 182.78328853 407.48438507 407.48438507C919.48438507 757.99956586 736.66623253 940.8177184 512 940.8177184z" fill="#2c2c2c" p-id="1315"></path><path d="M512 362.667584c-94.1054304 0-170.667584 76.56031893-170.667584 170.66574933s76.56031893 170.667584 170.667584 170.667584 170.667584-76.56031893 170.667584-170.667584S606.1054304 362.667584 512 362.667584z" fill="#2c2c2c" p-id="1316"></path></svg>Single Mode</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  
+  <div id="site-header-search"></div>
+</header>
+    
+<div id="site-main-content-wrapper">
+  
+  
+    
+
+
+<aside id="sidebar">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+
+  <div class="sticky"><strong class="sidebar-section">Introduction</strong>
+          
+          <a id="en-0-0" class="sidebar-link " href="../../../en/single/preface/#en-0-0">
+            
+              Preface
+            
+          </a>
+        
+          
+          <a id="en-0-1" class="sidebar-link " href="../../../en/single/installation/#en-0-1">
+            
+              Installation
+            
+          </a>
+        
+          
+          <a id="en-0-2" class="sidebar-link " href="../../../en/single/directory-structure/#en-0-2">
+            
+              Directory Structure
+            
+          </a>
+        <strong class="sidebar-section">Basic Content</strong>
+          
+          <a id="en-1-0" class="sidebar-link " href="../../../en/single/routing/#en-1-0">
+            
+              Routing
+            
+          </a>
+        
+          
+          <a id="en-1-1" class="sidebar-link " href="../../../en/single/controllers/#en-1-1">
+            
+              Controllers
+            
+          </a>
+        
+          
+          <a id="en-1-2" class="sidebar-link " href="../../../en/single/request-validator/#en-1-2">
+            
+              Request Validator
+            
+          </a>
+        
+          
+          <a id="en-1-3" class="sidebar-link " href="../../../en/single/exceptions/#en-1-3">
+            
+              Exceptions
+            
+          </a>
+        
+          
+          <a id="en-1-4" class="sidebar-link " href="../../../en/single/responses/#en-1-4">
+            
+              Responses
+            
+          </a>
+        <strong class="sidebar-section">Frontend Related</strong>
+          
+          <a id="en-2-0" class="sidebar-link current" href="../../../en/single/templates/#en-2-0">
+            
+              Templates
+            
+          </a>
+        
+          
+          <a id="en-2-1" class="sidebar-link " href="../../../en/single/frontend-build/#en-2-1">
+            
+              Frontend Build
+            
+          </a>
+        
+          
+          <a id="en-2-2" class="sidebar-link " href="../../../en/single/packaging/#en-2-2">
+            
+              Packaging
+            
+          </a>
+        <strong class="sidebar-section">Service Introduction</strong>
+          
+          <a id="en-3-0" class="sidebar-link " href="../../../en/single/auth-jwt-service/#en-3-0">
+            
+              auth-JWT Service
+            
+          </a>
+        
+          
+          <a id="en-3-1" class="sidebar-link " href="../../../en/single/cache-cache-service/#en-3-1">
+            
+              cache-Cache Service
+            
+          </a>
+        
+          
+          <a id="en-3-2" class="sidebar-link " href="../../../en/single/config-configuration-service/#en-3-2">
+            
+              config-Configuration Service
+            
+          </a>
+        
+          
+          <a id="en-3-3" class="sidebar-link " href="../../../en/single/cookie-cookie-service/#en-3-3">
+            
+              cookie-Cookie Service
+            
+          </a>
+        
+          
+          <a id="en-3-4" class="sidebar-link " href="../../../en/single/db-database-service/#en-3-4">
+            
+              db-Database Service
+            
+          </a>
+        
+          
+          <a id="en-3-5" class="sidebar-link " href="../../../en/single/exception-exception-service/#en-3-5">
+            
+              exception-Exception Service
+            
+          </a>
+        
+          
+          <a id="en-3-6" class="sidebar-link " href="../../../en/single/logger-logging-service/#en-3-6">
+            
+              logger-Logging Service
+            
+          </a>
+        
+          
+          <a id="en-3-7" class="sidebar-link " href="../../../en/single/passwd-password-hashing-service/#en-3-7">
+            
+              passwd-Password Hashing Service
+            
+          </a>
+        
+          
+          <a id="en-3-8" class="sidebar-link " href="../../../en/single/response-response-service/#en-3-8">
+            
+              response-Response Service
+            
+          </a>
+        
+          
+          <a id="en-3-9" class="sidebar-link " href="../../../en/single/route-routing-service/#en-3-9">
+            
+              route-Routing Service
+            
+          </a>
+        
+          
+          <a id="en-3-10" class="sidebar-link " href="../../../en/single/symcrypt-symmetric-encryption-service/#en-3-10">
+            
+              symcrypt-Symmetric Encryption Service
+            
+          </a>
+        
+          
+          <a id="en-3-11" class="sidebar-link " href="../../../en/single/translate-translation-service/#en-3-11">
+            
+              translate-Translation Service
+            
+          </a>
+        
+          
+          <a id="en-3-12" class="sidebar-link " href="../../../en/single/upload-upload-service/#en-3-12">
+            
+              upload-Upload Service
+            
+          </a>
+        
+          
+          <a id="en-3-13" class="sidebar-link " href="../../../en/single/util-utility-service/#en-3-13">
+            
+              util-Utility Service
+            
+          </a>
+        
+          
+          <a id="en-3-14" class="sidebar-link " href="../../../en/single/validator-validation-service/#en-3-14">
+            
+              validator-Validation Service
+            
+          </a>
+        <strong class="sidebar-section">Third-party Applications</strong>
+          
+          <a id="en-4-0" class="sidebar-link " href="../../../en/single/caddy-web-server/#en-4-0">
+            
+              Caddy Web Server
+            
+          </a>
+        
+          
+          <a id="en-4-1" class="sidebar-link " href="../../../en/single/log-viewer/#en-4-1">
+            
+              Log Viewer
+            
+          </a>
+        
+          
+          <a id="en-4-2" class="sidebar-link " href="../../../en/single/database/#en-4-2">
+            
+              Database
+            
+          </a>
+        <strong class="sidebar-section">Release</strong>
+          
+          <a id="en-5-0" class="sidebar-link " href="../../../en/single/release-preface/#en-5-0">
+            
+              Release Preface
+            
+          </a>
+        
+          
+          <a id="en-5-1" class="sidebar-link " href="../../../en/single/development-release/#en-5-1">
+            
+              Development Release
+            
+          </a>
+        
+          
+          <a id="en-5-2" class="sidebar-link " href="../../../en/single/testing-release/#en-5-2">
+            
+              Testing Release
+            
+          </a>
+        
+          
+          <a id="en-5-3" class="sidebar-link " href="../../../en/single/production-release/#en-5-3">
+            
+              Production Release
+            
+          </a>
+        <strong class="sidebar-section">Other</strong>
+          
+          <a id="en-6-0" class="sidebar-link " href="../../../en/single/configuration/#en-6-0">
+            
+              Configuration
+            
+          </a>
+        
+          
+          <a id="en-6-1" class="sidebar-link " href="../../../en/single/testing/#en-6-1">
+            
+              Testing
+            
+          </a>
+        
+          
+          <a id="en-6-2" class="sidebar-link " href="../../../en/single/utils/#en-6-2">
+            
+              Utils
+            
+          </a>
+        
+          
+          <a id="en-6-3" class="sidebar-link " href="../../../en/single/commands/#en-6-3">
+            
+              Commands
+            
+          </a>
+        
+          
+          <a id="en-6-4" class="sidebar-link " href="../../../en/single/advanced-data-processing/#en-6-4">
+            
+              Advanced Data Processing
+            
+          </a>
+        
+  </div>
+</aside>
+
+  
+  <main>
+    <article id="article">
+      <nav id="article-nav">
+  <button id="article-nav-menu-btn"><i class="icon icon-menu"></i> On this section</button>
+  <button id="article-nav-toc-btn"><i class="icon icon-toc"></i> On this page</button>
+</nav>
+      <header id="article-header">
+  <h1>Templates</h1>
+</header>
+      <div id="article-content">
+        
+        
+        <h3 id="libraries-used">Libraries Used</h3>
+<p>Based on Gin&rsquo;s <code>LoadHTMLGlob()</code> or <code>LoadHTMLFiles()</code>, which are actually methods from the <code>html/template</code> package, two methods for loading multiple templates at once have been encapsulated.</p>
+<p>These two methods are:</p>
+<ul>
+<li>One method for loading non-packaged template files.</li>
+<li>Another method for loading templates that are packaged into the program.</li>
+</ul>
+<p>The method signatures are as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nf">LoadHTMLGlobs</span><span class="p">(</span><span class="nx">patterns</span> <span class="o">...</span><span class="kt">string</span><span class="p">)</span> <span class="kt">error</span>
+</span></span><span class="line"><span class="cl"><span class="nf">LoadHTMLFS</span><span class="p">(</span><span class="nx">embed</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">FS</span><span class="p">,</span> <span class="nx">patterns</span> <span class="o">...</span><span class="kt">string</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="actual-loading">Actual Loading</h3>
+<p><code>resources/resources.go</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">resources</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;embed&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/app&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">route</span> <span class="p">=</span> <span class="nx">app</span><span class="p">.</span><span class="nf">Route</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Tmpl</span>  <span class="o">*</span><span class="nx">embed</span><span class="p">.</span><span class="nx">FS</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">err</span> <span class="o">:=</span> <span class="nx">route</span><span class="p">.</span><span class="nf">LoadHTMLGlobs</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;resources/views/*.tmpl&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;resources/views/**/*.tmpl&#34;</span><span class="p">)</span> <span class="c1">// Supports multiple levels of template files; if you need a third level, add &#34;resources/views/**/**/*.tmpl&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nx">Tmpl</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;No template content to load&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// If there are no template files in the program root directory, load templates from within the packaged program, add more levels as needed &#34;views/**/**/*.tmpl&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">route</span><span class="p">.</span><span class="nf">LoadHTMLFS</span><span class="p">(</span><span class="nx">Tmpl</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;views/*.tmpl&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;views/**/*.tmpl&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<p>Note: When adding template files with three levels of directory structure, <code>resources/embed.go</code> also needs to add a line <code>//go:embed views/**/**/*</code> to include the third level directory when running <code>go build -tags tmpl</code>.</p>
+</blockquote>
+<h3 id="template-naming">Template Naming</h3>
+<p>For example, in <code>resources/views/home/hello.tmpl</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{define &#34;home/hello&#34;}}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  {{template &#34;head&#34; .}}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;home-hello&#34;</span><span class="p">&gt;</span>Hello, Gower<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {{template &#34;foot&#34; .}}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span></code></pre></div><blockquote>
+<p>Like <code>{{define &quot;home/hello&quot;}}{{end}}</code>. All template files must be wrapped in a <code>define</code> block, and the name of the <code>define</code> must be unique, regardless of the directory level.</p>
+<p>Because <code>html/template</code> internally stores templates in a <code>map[string]any</code>, if the same name is defined in different directories, the later template will overwrite the earlier one, causing inconsistencies in the actual content.</p>
+<p>It is recommended to use the relative path structure from the <code>views</code> directory for the <code>define</code> name, without the file extension.</p>
+</blockquote>
+<h3 id="using-layouts">Using Layouts</h3>
+<p>The layout template is <code>app.tmpl</code>, which internally defines <code>head</code> and <code>foot</code>. Use it as shown above, by including <code>{{template &quot;head&quot; .}}</code> and <code>{{template &quot;foot&quot; .}}</code> in your own template files. The content should be placed between these two templates.</p>
+<h3 id="how-to-use">How to Use</h3>
+<p>Since the response is a template, the <code>Accept</code> header of the front-end request should be <code>text/html</code>, not <code>application/json</code>.</p>
+<h3 id="returning-servicesresponse-in-the-controller">Returning <code>services.Response</code> in the Controller</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">controllers</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/app&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/app/http/requests&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/app/models&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/services&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">AuthController</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">app</span><span class="p">.</span><span class="nx">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">Auth</span> <span class="p">=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">AuthController</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Me 获取个人信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span><span class="nx">AuthController</span><span class="p">)</span> <span class="nf">Me</span><span class="p">()</span> <span class="p">(</span><span class="nx">services</span><span class="p">.</span><span class="nx">Response</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Respond with the template name and template data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">Ok</span><span class="p">(</span><span class="s">&#34;auth/me&#34;</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Data</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;title&#34;</span><span class="p">:</span> <span class="s">&#34;我&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<p>&ldquo;auth/me&rdquo; is the template name.</p>
+<p>You might notice that this looks similar to the format used for JSON responses. This is because, when handling free controllers, the response is determined based on the <code>Accept</code> header. If it is <code>text/html</code>, the string type represents the template name, and the data represents the template data. If it is <code>application/json</code>, the string represents the <code>Msg</code> or <code>Token</code>, and the data represents the <code>Data</code>.</p>
+</blockquote>
+
+      </div>
+      
+
+
+
+
+
+
+
+
+  
+  
+  
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+      
+    
+        
+
+        
+          
+        
+
+        
+        
+      
+
+
+<footer id="article-footer">
+  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+
+  
+    <a id="article-prev-link" href="../../../single/responses/"><i class="icon icon-prev icon-colored"></i> Prev</a>
+  
+
+  
+    <a id="article-next-link"  href="../../../single/frontend-build/">Next <i class="icon icon-next icon-colored"></i></a>
+  
+</footer>
+    </article>
+    <aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    <strong><i class="icon icon-toc"></i> On this page</strong>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#libraries-used">Libraries Used</a></li>
+        <li><a href="#actual-loading">Actual Loading</a></li>
+        <li><a href="#template-naming">Template Naming</a></li>
+        <li><a href="#using-layouts">Using Layouts</a></li>
+        <li><a href="#how-to-use">How to Use</a></li>
+        <li><a href="#returning-servicesresponse-in-the-controller">Returning <code>services.Response</code> in the Controller</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</aside>
+  </main>
+</div>
+
+    <footer id="site-footer">
+  
+  <div id="site-footer-copyright">
+    <a href="https://falling-ts.github.io" target="_blank">
+      <i class="icon icon-copyright"></i> 2024 falling-ts
+    </a>
+  </div>
+
+  
+  <div id="site-footer-social">
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-fund">
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-love">
+    Made with <i class="icon icon-love icon-colored"></i> &nbsp;from&nbsp;<a href="https://docura.github.io/" target="_blank">Docura</a>
+  </div>
+</footer>
+    
+
+
+
+
+
+
+<script type="text/javascript" src="../../../js/base.min.js"></script>
+
+
+
+  
+  <script src="../../../js/component/docsearch.min.js"></script>
+  <script type="application/javascript">
+      docsearch({
+          container: '#site-header-search',
+          appId: '',
+          indexName: '',
+          apiKey: '',
+      });
+  </script>
+
+
+<script type="application/javascript">
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?2024-11-24')
+            .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
+    }
+</script>
+  </body>
+</html>

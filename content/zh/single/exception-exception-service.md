@@ -11,7 +11,7 @@ url: "/single/exception-异常服务"
 
 ### 服务标识符
 
-```
+```yaml
 "exception"
 ```
 
@@ -28,7 +28,7 @@ P.Register("exception", Depends{"config", "cache", "util", "cookie"}, func(ss ..
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "cache", "util", "cookie"
 ```
 

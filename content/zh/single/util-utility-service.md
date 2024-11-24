@@ -7,7 +7,7 @@ url: "/single/util-工具服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/jaevor/go-nanoid"
 ```
 > go-nanoid: 仅仅是 Nanoid 方法的开源库而已
@@ -16,7 +16,7 @@ url: "/single/util-工具服务"
 
 ### 服务标识符
 
-```
+```yaml
 "util"
 ```
 
@@ -68,7 +68,7 @@ type UtilService interface {
 id := util.Nanoid(21)
 v := util.Direct(relValue)
 
-err := util.SetEnv(".env.development", "APP_NAME", "Test")
+err := util.SetEnv(".env.dev", "APP_NAME", "Test")
 key, err := util.SecretKey(32)
 
 excpKey := util.ExcpKey

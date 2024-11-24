@@ -26,7 +26,7 @@ FLUSH PRIVILEGES;
 DROP DATABASE IF EXISTS test;
 CREATE DATABASE IF NOT EXISTS gower CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
-> 第一句的句尾 root 修改为你的密码, 然后重新打包启动 `./run-dev`
+> 第一句的句尾 root 修改为你的密码, 然后重新打包启动 `./docker/run-dev`
 >
 > 最后一句是初始化数据库, 可以改为你的数据库名称, 同时不要忘记修改 `envs/.env.test` 的环境配置
 
@@ -44,4 +44,4 @@ ENV MYSQL_DATABASE_CHAR="utf8mb4,utf8mb4_unicode_ci" # 数据库编码
 ENV MYSQL_ROOT_PASSWORD="root" # root 密码
 ```
 
-> 修改完成后, 重新构建启动 `./run-dev`
+> 修改完成后, 重新构建启动 `./docker/run-dev`

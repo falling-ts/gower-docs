@@ -8,7 +8,7 @@ url: "/single/打包"
 ```shell
 $ npm run dev
 ```
-> 将使用根目录下 `.env.development` 环境文件
+> 将使用根目录下 `.env.dev` 环境文件
 
 ## 打包为测试版
 
@@ -22,4 +22,4 @@ $ npm run test
 ```shell
 $ npm run prod
 ```
-> 将使用根目录下 `.env.production` 环境文件
+> 将使用根目录下 `.env.prod` 环境文件

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
+<meta name="author" content="falling-ts">
+
+<title>logger-Logging Service · Go/Gin Gower Docs</title>
+
+<link rel="canonical" href="//localhost:1313/en/single/logger-%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1/">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../scss/base.css" integrity="">
+
+
+
+<link rel="stylesheet" href="../../../scss/theme/default.css" integrity="">
+
+
+
+  <link rel="preconnect" href="https://-dsn.algolia.net" crossorigin />
+  
+  <link rel="stylesheet" href="../../../scss/component/docsearch.css" integrity=""/>
+
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../img/icon/favicon.ico">
+<link rel="icon" href="../../../img/icon/icon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../img/icon/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../img/icon/icon-180.png" sizes="180x180">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00000000"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-00000000');
+</script>
+
+
+  
+
+  </head>
+  <body>
+    <header id="site-header">
+  
+  <div id="site-header-brand">
+    <a href="../../../">Go/Gin Gower Docs</a>
+  </div>
+
+  
+  <div id="site-header-controls">
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="theme selector">
+        <i class="icon icon-brightness"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        <li role="menuitem"><button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button></li>
+      </ul>
+    </div>
+
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="language selector">
+        <i class="icon icon-translate"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        
+          
+          <li role="menuitem"><a href="//localhost:1313/single/logger-%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1/">中文</a></li>
+          
+          <li role="menuitem"><a href="//localhost:1313/en/single/logger-%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1/">English</a></li>
+          
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div id="site-header-menu">
+    <nav>
+      <ul>
+        
+        
+        
+          
+          <li><a href="../../../" ><svg t="1731853730249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="883" width="200" height="200"><path d="M466.48888853 821.99893333A182.13546667 182.13546667 0 0 1 512 463.64444479a182.0444448 182.0444448 0 0 1 45.51111147 358.35448854V918.75555519h227.5555552v-364.08888853a45.51111147 45.51111147 0 0 1 45.51111146-45.51111147h17.93137707L512 206.27911146 175.4908448 509.15555519H193.42222187a45.51111147 45.51111147 0 0 1 45.51111146 45.51111147v364.08888853h91.02222187a45.51111147 45.51111147 0 0 1 0 91.02222294H193.42222187a45.51111147 45.51111147 0 0 1-45.5111104-45.51111147v-364.08888853H56.88888853c-41.68817813 0-61.44-51.4275552-30.44693333-79.32586667l455.11111147-409.6a45.51111147 45.51111147 0 0 1 60.89386666 0l455.11111147 409.6C1028.55111147 548.75022186 1008.79928853 600.17777813 967.11111147 600.17777813h-91.02222294v364.08888853a45.51111147 45.51111147 0 0 1-45.5111104 45.51111147h-318.57777813a45.51111147 45.51111147 0 0 1-45.51111147-45.51111147v-142.26773333zM512 736.71111146a91.02222187 91.02222187 0 1 0 0-182.0444448 91.02222187 91.02222187 0 0 0 0 182.0444448z" fill="#2c2c2c" p-id="884"></path></svg>Home</a></li>
+        
+          
+          <li><a href="../../../workspace/%E4%BB%8B%E7%BB%8D/" ><svg t="1731853749882" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1030" width="200" height="200"><path d="M941.48136843 320.91117833a58.73434594 58.73434594 0 0 0-29.56686-50.74309969L546.72469031 61.2022452a58.73434594 58.73434594 0 0 0-58.73434594 1e-8l-363.59044406 211.76239406a58.73434594 58.73434594 0 0 0-28.76811094 51.14247468v420.72729094a58.73434594 58.73434594 0 0 0 29.56592344 50.74309969l363.59231906 208.16614594a58.73434594 58.73434594 0 0 0 58.33403344 0l365.18981812-210.9627075a58.73434594 58.73434594 0 0 0 29.56686-51.14247469zM516.75939281 122.73315177l307.65453375 176.20303781-141.84086625 90.69745406-134.24993344-76.71371156a59.93247001 59.93247001 0 0 0-59.9315325 0L353.74134843 392.8305177l-142.24024125-91.4971425z m0 567.76284281l-119.86494094-69.12184125 114.27181875-70.72121437L623.43746437 630.56352364zM382.11008437 453.96111177l105.480885-61.53090656v105.48182249a25.17186281 25.17186281 0 0 0 0 2.79656063h-4.39499719l-100.68745031 64.32840562z m161.81804437 44.35029094V388.83489458l112.27400719 63.12840563V581.41792302L542.72812967 501.50827583a27.56904844 27.56904844 0 0 0 2e-8-4.79437312zM163.55550562 351.27678833l150.6308625 95.49276469v170.60803968a59.93247001 59.93247001 0 0 0 29.96623501 51.54278719l140.64180561 79.90964813v173.00616375l-319.64046561-183.39365907z m389.56199344 570.9587775V749.23033958l141.44055468-79.90964719a59.93247001 59.93247001 0 0 0 29.9671725-51.94216219V445.57049146l150.23148844-95.09245313V737.6428452z m0 0" fill="#2c2c2c" p-id="1031"></path></svg>Workspace Mode</a></li>
+        
+          
+          <li><a href="../../../single/%E5%89%8D%E8%A8%80/" ><svg t="1731853765799" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1314" width="200" height="200"><path d="M512 57.5822816c-262.31427627 0-475.75105173 213.43493973-475.75105173 475.75105173 0 262.3491392 213.40191147 475.75105173 475.75105173 475.75105173S987.75105173 795.68247253 987.75105173 533.33333333C987.75105173 271.01905706 774.3491392 57.5822816 512 57.5822816zM512 940.8177184c-224.6992608 0-407.48438507-182.81815147-407.48438507-407.48438507 0-224.6992608 182.78328853-407.48438507 407.48438507-407.48438507 224.66623253 0 407.48438507 182.78328853 407.48438507 407.48438507C919.48438507 757.99956586 736.66623253 940.8177184 512 940.8177184z" fill="#2c2c2c" p-id="1315"></path><path d="M512 362.667584c-94.1054304 0-170.667584 76.56031893-170.667584 170.66574933s76.56031893 170.667584 170.667584 170.667584 170.667584-76.56031893 170.667584-170.667584S606.1054304 362.667584 512 362.667584z" fill="#2c2c2c" p-id="1316"></path></svg>Single Mode</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  
+  <div id="site-header-search"></div>
+</header>
+    
+<div id="site-main-content-wrapper">
+  
+  
+    
+
+
+<aside id="sidebar">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+
+  <div class="sticky"><strong class="sidebar-section">Introduction</strong>
+          
+          <a id="en-0-0" class="sidebar-link " href="../../../en/single/preface/#en-0-0">
+            
+              Preface
+            
+          </a>
+        
+          
+          <a id="en-0-1" class="sidebar-link " href="../../../en/single/installation/#en-0-1">
+            
+              Installation
+            
+          </a>
+        
+          
+          <a id="en-0-2" class="sidebar-link " href="../../../en/single/directory-structure/#en-0-2">
+            
+              Directory Structure
+            
+          </a>
+        <strong class="sidebar-section">Basic Content</strong>
+          
+          <a id="en-1-0" class="sidebar-link " href="../../../en/single/routing/#en-1-0">
+            
+              Routing
+            
+          </a>
+        
+          
+          <a id="en-1-1" class="sidebar-link " href="../../../en/single/controllers/#en-1-1">
+            
+              Controllers
+            
+          </a>
+        
+          
+          <a id="en-1-2" class="sidebar-link " href="../../../en/single/request-validator/#en-1-2">
+            
+              Request Validator
+            
+          </a>
+        
+          
+          <a id="en-1-3" class="sidebar-link " href="../../../en/single/exceptions/#en-1-3">
+            
+              Exceptions
+            
+          </a>
+        
+          
+          <a id="en-1-4" class="sidebar-link " href="../../../en/single/responses/#en-1-4">
+            
+              Responses
+            
+          </a>
+        <strong class="sidebar-section">Frontend Related</strong>
+          
+          <a id="en-2-0" class="sidebar-link " href="../../../en/single/templates/#en-2-0">
+            
+              Templates
+            
+          </a>
+        
+          
+          <a id="en-2-1" class="sidebar-link " href="../../../en/single/frontend-build/#en-2-1">
+            
+              Frontend Build
+            
+          </a>
+        
+          
+          <a id="en-2-2" class="sidebar-link " href="../../../en/single/packaging/#en-2-2">
+            
+              Packaging
+            
+          </a>
+        <strong class="sidebar-section">Service Introduction</strong>
+          
+          <a id="en-3-0" class="sidebar-link " href="../../../en/single/auth-jwt-service/#en-3-0">
+            
+              auth-JWT Service
+            
+          </a>
+        
+          
+          <a id="en-3-1" class="sidebar-link " href="../../../en/single/cache-cache-service/#en-3-1">
+            
+              cache-Cache Service
+            
+          </a>
+        
+          
+          <a id="en-3-2" class="sidebar-link " href="../../../en/single/config-configuration-service/#en-3-2">
+            
+              config-Configuration Service
+            
+          </a>
+        
+          
+          <a id="en-3-3" class="sidebar-link " href="../../../en/single/cookie-cookie-service/#en-3-3">
+            
+              cookie-Cookie Service
+            
+          </a>
+        
+          
+          <a id="en-3-4" class="sidebar-link " href="../../../en/single/db-database-service/#en-3-4">
+            
+              db-Database Service
+            
+          </a>
+        
+          
+          <a id="en-3-5" class="sidebar-link " href="../../../en/single/exception-exception-service/#en-3-5">
+            
+              exception-Exception Service
+            
+          </a>
+        
+          
+          <a id="en-3-6" class="sidebar-link " href="../../../en/single/logger-logging-service/#en-3-6">
+            
+              logger-Logging Service
+            
+          </a>
+        
+          
+          <a id="en-3-7" class="sidebar-link " href="../../../en/single/passwd-password-hashing-service/#en-3-7">
+            
+              passwd-Password Hashing Service
+            
+          </a>
+        
+          
+          <a id="en-3-8" class="sidebar-link " href="../../../en/single/response-response-service/#en-3-8">
+            
+              response-Response Service
+            
+          </a>
+        
+          
+          <a id="en-3-9" class="sidebar-link " href="../../../en/single/route-routing-service/#en-3-9">
+            
+              route-Routing Service
+            
+          </a>
+        
+          
+          <a id="en-3-10" class="sidebar-link " href="../../../en/single/symcrypt-symmetric-encryption-service/#en-3-10">
+            
+              symcrypt-Symmetric Encryption Service
+            
+          </a>
+        
+          
+          <a id="en-3-11" class="sidebar-link " href="../../../en/single/translate-translation-service/#en-3-11">
+            
+              translate-Translation Service
+            
+          </a>
+        
+          
+          <a id="en-3-12" class="sidebar-link " href="../../../en/single/upload-upload-service/#en-3-12">
+            
+              upload-Upload Service
+            
+          </a>
+        
+          
+          <a id="en-3-13" class="sidebar-link " href="../../../en/single/util-utility-service/#en-3-13">
+            
+              util-Utility Service
+            
+          </a>
+        
+          
+          <a id="en-3-14" class="sidebar-link " href="../../../en/single/validator-validation-service/#en-3-14">
+            
+              validator-Validation Service
+            
+          </a>
+        <strong class="sidebar-section">Third-party Applications</strong>
+          
+          <a id="en-4-0" class="sidebar-link " href="../../../en/single/caddy-web-server/#en-4-0">
+            
+              Caddy Web Server
+            
+          </a>
+        
+          
+          <a id="en-4-1" class="sidebar-link " href="../../../en/single/log-viewer/#en-4-1">
+            
+              Log Viewer
+            
+          </a>
+        
+          
+          <a id="en-4-2" class="sidebar-link " href="../../../en/single/database/#en-4-2">
+            
+              Database
+            
+          </a>
+        <strong class="sidebar-section">Release</strong>
+          
+          <a id="en-5-0" class="sidebar-link " href="../../../en/single/release-preface/#en-5-0">
+            
+              Release Preface
+            
+          </a>
+        
+          
+          <a id="en-5-1" class="sidebar-link " href="../../../en/single/development-release/#en-5-1">
+            
+              Development Release
+            
+          </a>
+        
+          
+          <a id="en-5-2" class="sidebar-link " href="../../../en/single/testing-release/#en-5-2">
+            
+              Testing Release
+            
+          </a>
+        
+          
+          <a id="en-5-3" class="sidebar-link " href="../../../en/single/production-release/#en-5-3">
+            
+              Production Release
+            
+          </a>
+        <strong class="sidebar-section">Other</strong>
+          
+          <a id="en-6-0" class="sidebar-link " href="../../../en/single/configuration/#en-6-0">
+            
+              Configuration
+            
+          </a>
+        
+          
+          <a id="en-6-1" class="sidebar-link " href="../../../en/single/testing/#en-6-1">
+            
+              Testing
+            
+          </a>
+        
+          
+          <a id="en-6-2" class="sidebar-link " href="../../../en/single/utils/#en-6-2">
+            
+              Utils
+            
+          </a>
+        
+          
+          <a id="en-6-3" class="sidebar-link " href="../../../en/single/commands/#en-6-3">
+            
+              Commands
+            
+          </a>
+        
+          
+          <a id="en-6-4" class="sidebar-link " href="../../../en/single/advanced-data-processing/#en-6-4">
+            
+              Advanced Data Processing
+            
+          </a>
+        
+  </div>
+</aside>
+
+  
+  <main>
+    <article id="article">
+      <nav id="article-nav">
+  <button id="article-nav-menu-btn"><i class="icon icon-menu"></i> On this section</button>
+  <button id="article-nav-toc-btn"><i class="icon icon-toc"></i> On this page</button>
+</nav>
+      <header id="article-header">
+  <h1>logger-Logging Service</h1>
+</header>
+      <div id="article-content">
+        
+        
+        <h2 id="使用的开源库">使用的开源库</h2>
+<pre tabindex="0"><code>&#34;go.uber.org/zap&#34;
+</code></pre><h2 id="服务提供者">服务提供者</h2>
+<h3 id="服务标识符">服务标识符</h3>
+<pre tabindex="0"><code>&#34;logger&#34;
+</code></pre><h3 id="注册服务">注册服务</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">P</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="s">&#34;logger&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">()</span> <span class="p">(</span><span class="nx">Depends</span><span class="p">,</span> <span class="nx">Resolve</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">Depends</span><span class="p">{</span><span class="s">&#34;config&#34;</span><span class="p">,</span> <span class="s">&#34;util&#34;</span><span class="p">},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">ss</span> <span class="o">...</span><span class="nx">services</span><span class="p">.</span><span class="nx">Service</span><span class="p">)</span> <span class="nx">services</span><span class="p">.</span><span class="nx">Service</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">logger</span><span class="p">.</span><span class="nf">New</span><span class="p">().</span><span class="nf">Init</span><span class="p">(</span><span class="nx">ss</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><h3 id="注册服务格式见-auth-服务">注册服务格式见 auth 服务</h3>
+<h2 id="依赖的服务">依赖的服务</h2>
+<pre tabindex="0"><code>&#34;config&#34;, &#34;util&#34;
+</code></pre><h2 id="env-配置">ENV 配置</h2>
+<pre tabindex="0"><code># 三种模式: development, production, test
+APP_MODE=development
+
+
+# 日志保存目录, 默认 storage/logs
+LOG_DIR=storage/logs
+# 日志模式, 默认 stack, 包含 stack flat-day day hour
+LOG_CHANNEL=flat-day
+# 不保存日志的路由, 用英文逗号分割, 后缀自动加 *, 用以匹配子路由
+LOG_SKIP_PATHS=&#34;GET /&#34;
+# 保存日志的路由, 用英文逗号分割, 后缀自动加 *, 用以匹配子路由
+LOG_PATHS=&#34;GET /test&#34;
+# 日志消息 Key
+LOG_MSG_KEY=msg
+# 日志级别 Key
+LOG_LEVEL_KEY=level
+# 日志时间 Key
+LOG_TIME_KEY=ts
+# 日志名称 Key
+LOG_NAME_KEY=logger
+# 日志调用文件和行号 Key
+LOG_CALLER_KEY=caller
+# 日志错误调用栈 Key
+LOG_STACK_KEY=stack
+# 日志时间格式, 参照 time 包下面 format.go
+LOG_TIME_FORMAT=&#34;2006-01-02 15:04:05&#34;
+# 日志中时间段显示格式: seconds, nanos, millis, string
+LOG_DURATION_FORMAT=seconds
+# 控制台日志显示的分隔符, 不填为制表符
+LOG_CONSOLE_SEP=&#34;, &#34;
+</code></pre><blockquote>
+<p>日志纪录, 分为四大类: 控制台普通日志, 控制台错误日志, 文件普通日志, 文件错误日志.</p>
+<p>文件普通日志, 根据日期分割以 gower-xxxx-xx-xx.log 格式命名, 如果是 day, hour 多层日期目录分割, 则以 xxxx/xx/xx.log 命名.</p>
+<p>文件错误日志, 根据日期分割以 error-xxxx-xx-xx.log 格式命名.</p>
+</blockquote>
+<h3 id="关于模式与日志等级的关系">关于模式与日志等级的关系</h3>
+<h4 id="development-开发模式">development 开发模式</h4>
+<p>就是控制台 debug 模式, 文件 debug 模式; 意思指: 控制台和文件都会输出 debug 信息</p>
+<h4 id="test-开发模式">test 开发模式</h4>
+<p>就是控制台 info 模式, 文件 debug 模式; 意思指: 控制台输出 info 以上级别信息, 文件输出 debug 信息</p>
+<h4 id="production-生产模式">production 生产模式</h4>
+<p>就是控制台 info 模式, 文件 info 模式; 意思指: 控制台和文件只输出 info 以上级别的信息</p>
+<blockquote>
+<p>info 以上级别, 包含 warn error panic 等错误级别</p>
+</blockquote>
+<h2 id="服务接口方法">服务接口方法</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// LoggerService 日志服务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">LoggerService</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Service</span> <span class="c1">// 通用服务接口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于创建一个可写入日志记录的实例. Check 方法需要指定一个日志记录的级别和消息文本, 并返回一个 CheckedEntry 实例, 该实例提供了一个接口来添加日志记录的字段、堆栈跟踪等信息.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Check</span><span class="p">(</span><span class="nx">lvl</span> <span class="nx">zapcore</span><span class="p">.</span><span class="nx">Level</span><span class="p">,</span> <span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="o">*</span><span class="nx">zapcore</span><span class="p">.</span><span class="nx">CheckedEntry</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于获取当前日志记录器的底层核心日志记录器.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Core</span><span class="p">()</span> <span class="nx">zapcore</span><span class="p">.</span><span class="nx">Core</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于输出调试级别的日志. 当您需要在调试代码时记录一些额外信息时, 可以使用 Debug 方法. 与 Info 和 Error 等方法不同, Debug 方法输出的日志记录通常不会在生产环境中记录.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Debug</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于记录一条带有堆栈跟踪的 panic 级别的日志记录, 并引发 panic 异常. 与 Panic 方法不同, DPanic 方法记录的日志记录中包含堆栈跟踪, 这使得在生产环境中排查问题变得更加容易.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">DPanic</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于输出错误级别的日志. 当您需要记录一些出现错误的信息时, 可以使用 Error 方法. 与 Info 和 Debug 等方法不同, Error 方法输出的日志记录通常会在生产环境中记录, 并且通常会引起关注.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Error</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于记录一条致命错误的日志记录, 并使程序在记录日志记录之后立即退出. 与 Error 方法不同, Fatal 方法会强制结束当前进程, 因此应该谨慎使用.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Fatal</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于输出信息级别的日志. 当您需要记录一些有用的信息时, 可以使用 Info 方法. 与 Debug 和 Error 等方法不同, Info 方法输出的日志记录通常会在生产环境中记录, 并且通常不会引起关注.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Info</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于获取当前日志记录器的日志级别. 日志级别指定了要记录的最低日志级别, 例如 Debug、Info 或 Error.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Level</span><span class="p">()</span> <span class="nx">zapcore</span><span class="p">.</span><span class="nx">Level</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于记录指定级别的日志记录. 您可以使用 Log 方法来输出任何级别的日志记录, 包括 Debug、Info、Error 等级别.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Log</span><span class="p">(</span><span class="nx">lvl</span> <span class="nx">zapcore</span><span class="p">.</span><span class="nx">Level</span><span class="p">,</span> <span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于创建一个新的日志记录器, 该日志记录器具有指定的名称. 命名记录器可用于创建日志记录器的层次结构, 以便在记录器之间共享配置和组织日志记录.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Named</span><span class="p">(</span><span class="nx">s</span> <span class="kt">string</span><span class="p">)</span> <span class="o">*</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Logger</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于记录一条 panic 级别的日志记录, 并引发 panic 异常. 与 Fatal 方法不同, Panic 方法不会强制结束当前进程, 而是只引发一个 panic 异常, 这使得您可以在 panic 异常中捕获和处理程序状态.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Panic</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于创建一个新的 SugaredLogger, 该对象包装了当前日志记录器的实例, 并允许您轻松地使用结构化日志记录 API.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Sugar</span><span class="p">()</span> <span class="o">*</span><span class="nx">zap</span><span class="p">.</span><span class="nx">SugaredLogger</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于刷新任何还未写入的日志缓冲区并等待所有日志写入操作完成. 如果不调用 Sync 方法, 则可能会出现丢失日志记录或程序在退出时崩溃的情况.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Sync</span><span class="p">()</span> <span class="kt">error</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于创建一个新的日志记录器, 该记录器使用指定的配置选项. 配置选项包括日志级别、输出格式、时间戳格式、堆栈跟踪的级别等.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">WithOptions</span><span class="p">(</span><span class="nx">opts</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Option</span><span class="p">)</span> <span class="o">*</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Logger</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于创建一个新的日志记录器, 该记录器具有指定的上下文字段. 这些上下文字段将与所有后续的日志记录一起记录, 并可以在日志记录中使用.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">With</span><span class="p">(</span><span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span> <span class="o">*</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Logger</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用于记录一条 warn 级别的日志记录.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Warn</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">fields</span> <span class="o">...</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 获取 zap logger
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">Zap</span><span class="p">()</span> <span class="o">*</span><span class="nx">zap</span><span class="p">.</span><span class="nx">Logger</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 获取 DB 的日志输出器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">DB</span><span class="p">()</span> <span class="nx">DBLogger</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+      </div>
+      
+
+
+
+
+
+
+
+
+  
+  
+  
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+
+
+<footer id="article-footer">
+  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+
+  
+    <a id="article-prev-link" href="../../../single/advanced-data-processing/"><i class="icon icon-prev icon-colored"></i> Prev</a>
+  
+
+  
+</footer>
+    </article>
+    <aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    <strong><i class="icon icon-toc"></i> On this page</strong>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用的开源库">使用的开源库</a></li>
+    <li><a href="#服务提供者">服务提供者</a>
+      <ul>
+        <li><a href="#服务标识符">服务标识符</a></li>
+        <li><a href="#注册服务">注册服务</a></li>
+        <li><a href="#注册服务格式见-auth-服务">注册服务格式见 auth 服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#依赖的服务">依赖的服务</a></li>
+    <li><a href="#env-配置">ENV 配置</a>
+      <ul>
+        <li><a href="#关于模式与日志等级的关系">关于模式与日志等级的关系</a></li>
+      </ul>
+    </li>
+    <li><a href="#服务接口方法">服务接口方法</a></li>
+  </ul>
+</nav>
+  </div>
+</aside>
+  </main>
+</div>
+
+    <footer id="site-footer">
+  
+  <div id="site-footer-copyright">
+    <a href="https://falling-ts.github.io" target="_blank">
+      <i class="icon icon-copyright"></i> 2024 falling-ts
+    </a>
+  </div>
+
+  
+  <div id="site-footer-social">
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-fund">
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-love">
+    Made with <i class="icon icon-love icon-colored"></i> &nbsp;from&nbsp;<a href="https://docura.github.io/" target="_blank">Docura</a>
+  </div>
+</footer>
+    
+
+
+
+
+
+
+<script type="text/javascript" src="../../../js/base.min.js"></script>
+
+
+
+  
+  <script src="../../../js/component/docsearch.min.js"></script>
+  <script type="application/javascript">
+      docsearch({
+          container: '#site-header-search',
+          appId: '',
+          indexName: '',
+          apiKey: '',
+      });
+  </script>
+
+
+<script type="application/javascript">
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?2024-11-24')
+            .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
+    }
+</script>
+  </body>
+</html>

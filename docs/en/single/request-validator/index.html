@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go/Gin Gower is a project based on the Go language and the Gin framework.">
+<meta name="author" content="falling-ts">
+
+<title>Request Validator · Go/Gin Gower Docs</title>
+
+<link rel="canonical" href="../../../en/single/request-validator/">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../scss/base.css" integrity="">
+
+
+
+<link rel="stylesheet" href="../../../scss/theme/default.css" integrity="">
+
+
+
+  <link rel="preconnect" href="https://-dsn.algolia.net" crossorigin />
+  
+  <link rel="stylesheet" href="../../../scss/component/docsearch.css" integrity=""/>
+
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../img/icon/favicon.ico">
+<link rel="icon" href="../../../img/icon/icon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../img/icon/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../img/icon/icon-180.png" sizes="180x180">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00000000"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-00000000');
+</script>
+
+
+  
+
+  </head>
+  <body>
+    <header id="site-header">
+  
+  <div id="site-header-brand">
+    <a href="../../../">Go/Gin Gower Docs</a>
+  </div>
+
+  
+  <div id="site-header-controls">
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="theme selector">
+        <i class="icon icon-brightness"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        <li role="menuitem"><button class="color-scheme" data-value="light"><i class="icon icon-light-mode"></i> Light</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="dark"><i class="icon icon-dark-mode"></i> Dark &nbsp;</button></li>
+        <li role="menuitem"><button class="color-scheme" data-value="night"><i class="icon icon-night-mode"></i> Night</button></li>
+      </ul>
+    </div>
+
+    
+    <div class="dropdown">
+      <button class="dropdown-btn" aria-haspopup="menu" aria-label="language selector">
+        <i class="icon icon-translate"></i>
+        <i class="icon icon-select"></i>
+      </button>
+      <ul role="menu" class="dropdown-menu">
+        
+          
+          <li role="menuitem"><a href="../../../single/%E8%AF%B7%E6%B1%82%E9%AA%8C%E8%AF%81%E5%99%A8/">中文</a></li>
+          
+          <li role="menuitem"><a href="../../../en/single/request-validator/">English</a></li>
+          
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div id="site-header-menu">
+    <nav>
+      <ul>
+        
+        
+        
+          
+          <li><a href="../../../" ><svg t="1731853730249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="883" width="200" height="200"><path d="M466.48888853 821.99893333A182.13546667 182.13546667 0 0 1 512 463.64444479a182.0444448 182.0444448 0 0 1 45.51111147 358.35448854V918.75555519h227.5555552v-364.08888853a45.51111147 45.51111147 0 0 1 45.51111146-45.51111147h17.93137707L512 206.27911146 175.4908448 509.15555519H193.42222187a45.51111147 45.51111147 0 0 1 45.51111146 45.51111147v364.08888853h91.02222187a45.51111147 45.51111147 0 0 1 0 91.02222294H193.42222187a45.51111147 45.51111147 0 0 1-45.5111104-45.51111147v-364.08888853H56.88888853c-41.68817813 0-61.44-51.4275552-30.44693333-79.32586667l455.11111147-409.6a45.51111147 45.51111147 0 0 1 60.89386666 0l455.11111147 409.6C1028.55111147 548.75022186 1008.79928853 600.17777813 967.11111147 600.17777813h-91.02222294v364.08888853a45.51111147 45.51111147 0 0 1-45.5111104 45.51111147h-318.57777813a45.51111147 45.51111147 0 0 1-45.51111147-45.51111147v-142.26773333zM512 736.71111146a91.02222187 91.02222187 0 1 0 0-182.0444448 91.02222187 91.02222187 0 0 0 0 182.0444448z" fill="#2c2c2c" p-id="884"></path></svg>Home</a></li>
+        
+          
+          <li><a href="../../../workspace/%E4%BB%8B%E7%BB%8D/" ><svg t="1731853749882" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1030" width="200" height="200"><path d="M941.48136843 320.91117833a58.73434594 58.73434594 0 0 0-29.56686-50.74309969L546.72469031 61.2022452a58.73434594 58.73434594 0 0 0-58.73434594 1e-8l-363.59044406 211.76239406a58.73434594 58.73434594 0 0 0-28.76811094 51.14247468v420.72729094a58.73434594 58.73434594 0 0 0 29.56592344 50.74309969l363.59231906 208.16614594a58.73434594 58.73434594 0 0 0 58.33403344 0l365.18981812-210.9627075a58.73434594 58.73434594 0 0 0 29.56686-51.14247469zM516.75939281 122.73315177l307.65453375 176.20303781-141.84086625 90.69745406-134.24993344-76.71371156a59.93247001 59.93247001 0 0 0-59.9315325 0L353.74134843 392.8305177l-142.24024125-91.4971425z m0 567.76284281l-119.86494094-69.12184125 114.27181875-70.72121437L623.43746437 630.56352364zM382.11008437 453.96111177l105.480885-61.53090656v105.48182249a25.17186281 25.17186281 0 0 0 0 2.79656063h-4.39499719l-100.68745031 64.32840562z m161.81804437 44.35029094V388.83489458l112.27400719 63.12840563V581.41792302L542.72812967 501.50827583a27.56904844 27.56904844 0 0 0 2e-8-4.79437312zM163.55550562 351.27678833l150.6308625 95.49276469v170.60803968a59.93247001 59.93247001 0 0 0 29.96623501 51.54278719l140.64180561 79.90964813v173.00616375l-319.64046561-183.39365907z m389.56199344 570.9587775V749.23033958l141.44055468-79.90964719a59.93247001 59.93247001 0 0 0 29.9671725-51.94216219V445.57049146l150.23148844-95.09245313V737.6428452z m0 0" fill="#2c2c2c" p-id="1031"></path></svg>Workspace Mode</a></li>
+        
+          
+          <li><a href="../../../single/%E5%89%8D%E8%A8%80/" ><svg t="1731853765799" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1314" width="200" height="200"><path d="M512 57.5822816c-262.31427627 0-475.75105173 213.43493973-475.75105173 475.75105173 0 262.3491392 213.40191147 475.75105173 475.75105173 475.75105173S987.75105173 795.68247253 987.75105173 533.33333333C987.75105173 271.01905706 774.3491392 57.5822816 512 57.5822816zM512 940.8177184c-224.6992608 0-407.48438507-182.81815147-407.48438507-407.48438507 0-224.6992608 182.78328853-407.48438507 407.48438507-407.48438507 224.66623253 0 407.48438507 182.78328853 407.48438507 407.48438507C919.48438507 757.99956586 736.66623253 940.8177184 512 940.8177184z" fill="#2c2c2c" p-id="1315"></path><path d="M512 362.667584c-94.1054304 0-170.667584 76.56031893-170.667584 170.66574933s76.56031893 170.667584 170.667584 170.667584 170.667584-76.56031893 170.667584-170.667584S606.1054304 362.667584 512 362.667584z" fill="#2c2c2c" p-id="1316"></path></svg>Single Mode</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  
+  <div id="site-header-search"></div>
+</header>
+    
+<div id="site-main-content-wrapper">
+  
+  
+    
+
+
+<aside id="sidebar">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+
+  <div class="sticky"><strong class="sidebar-section">Introduction</strong>
+          
+          <a id="en-0-0" class="sidebar-link " href="../../../en/single/preface/#en-0-0">
+            
+              Preface
+            
+          </a>
+        
+          
+          <a id="en-0-1" class="sidebar-link " href="../../../en/single/installation/#en-0-1">
+            
+              Installation
+            
+          </a>
+        
+          
+          <a id="en-0-2" class="sidebar-link " href="../../../en/single/directory-structure/#en-0-2">
+            
+              Directory Structure
+            
+          </a>
+        <strong class="sidebar-section">Basic Content</strong>
+          
+          <a id="en-1-0" class="sidebar-link " href="../../../en/single/routing/#en-1-0">
+            
+              Routing
+            
+          </a>
+        
+          
+          <a id="en-1-1" class="sidebar-link " href="../../../en/single/controllers/#en-1-1">
+            
+              Controllers
+            
+          </a>
+        
+          
+          <a id="en-1-2" class="sidebar-link current" href="../../../en/single/request-validator/#en-1-2">
+            
+              Request Validator
+            
+          </a>
+        
+          
+          <a id="en-1-3" class="sidebar-link " href="../../../en/single/exceptions/#en-1-3">
+            
+              Exceptions
+            
+          </a>
+        
+          
+          <a id="en-1-4" class="sidebar-link " href="../../../en/single/responses/#en-1-4">
+            
+              Responses
+            
+          </a>
+        <strong class="sidebar-section">Frontend Related</strong>
+          
+          <a id="en-2-0" class="sidebar-link " href="../../../en/single/templates/#en-2-0">
+            
+              Templates
+            
+          </a>
+        
+          
+          <a id="en-2-1" class="sidebar-link " href="../../../en/single/frontend-build/#en-2-1">
+            
+              Frontend Build
+            
+          </a>
+        
+          
+          <a id="en-2-2" class="sidebar-link " href="../../../en/single/packaging/#en-2-2">
+            
+              Packaging
+            
+          </a>
+        <strong class="sidebar-section">Service Introduction</strong>
+          
+          <a id="en-3-0" class="sidebar-link " href="../../../en/single/auth-jwt-service/#en-3-0">
+            
+              auth-JWT Service
+            
+          </a>
+        
+          
+          <a id="en-3-1" class="sidebar-link " href="../../../en/single/cache-cache-service/#en-3-1">
+            
+              cache-Cache Service
+            
+          </a>
+        
+          
+          <a id="en-3-2" class="sidebar-link " href="../../../en/single/config-configuration-service/#en-3-2">
+            
+              config-Configuration Service
+            
+          </a>
+        
+          
+          <a id="en-3-3" class="sidebar-link " href="../../../en/single/cookie-cookie-service/#en-3-3">
+            
+              cookie-Cookie Service
+            
+          </a>
+        
+          
+          <a id="en-3-4" class="sidebar-link " href="../../../en/single/db-database-service/#en-3-4">
+            
+              db-Database Service
+            
+          </a>
+        
+          
+          <a id="en-3-5" class="sidebar-link " href="../../../en/single/exception-exception-service/#en-3-5">
+            
+              exception-Exception Service
+            
+          </a>
+        
+          
+          <a id="en-3-6" class="sidebar-link " href="../../../en/single/logger-logging-service/#en-3-6">
+            
+              logger-Logging Service
+            
+          </a>
+        
+          
+          <a id="en-3-7" class="sidebar-link " href="../../../en/single/passwd-password-hashing-service/#en-3-7">
+            
+              passwd-Password Hashing Service
+            
+          </a>
+        
+          
+          <a id="en-3-8" class="sidebar-link " href="../../../en/single/response-response-service/#en-3-8">
+            
+              response-Response Service
+            
+          </a>
+        
+          
+          <a id="en-3-9" class="sidebar-link " href="../../../en/single/route-routing-service/#en-3-9">
+            
+              route-Routing Service
+            
+          </a>
+        
+          
+          <a id="en-3-10" class="sidebar-link " href="../../../en/single/symcrypt-symmetric-encryption-service/#en-3-10">
+            
+              symcrypt-Symmetric Encryption Service
+            
+          </a>
+        
+          
+          <a id="en-3-11" class="sidebar-link " href="../../../en/single/translate-translation-service/#en-3-11">
+            
+              translate-Translation Service
+            
+          </a>
+        
+          
+          <a id="en-3-12" class="sidebar-link " href="../../../en/single/upload-upload-service/#en-3-12">
+            
+              upload-Upload Service
+            
+          </a>
+        
+          
+          <a id="en-3-13" class="sidebar-link " href="../../../en/single/util-utility-service/#en-3-13">
+            
+              util-Utility Service
+            
+          </a>
+        
+          
+          <a id="en-3-14" class="sidebar-link " href="../../../en/single/validator-validation-service/#en-3-14">
+            
+              validator-Validation Service
+            
+          </a>
+        <strong class="sidebar-section">Third-party Applications</strong>
+          
+          <a id="en-4-0" class="sidebar-link " href="../../../en/single/caddy-web-server/#en-4-0">
+            
+              Caddy Web Server
+            
+          </a>
+        
+          
+          <a id="en-4-1" class="sidebar-link " href="../../../en/single/log-viewer/#en-4-1">
+            
+              Log Viewer
+            
+          </a>
+        
+          
+          <a id="en-4-2" class="sidebar-link " href="../../../en/single/database/#en-4-2">
+            
+              Database
+            
+          </a>
+        <strong class="sidebar-section">Release</strong>
+          
+          <a id="en-5-0" class="sidebar-link " href="../../../en/single/release-preface/#en-5-0">
+            
+              Release Preface
+            
+          </a>
+        
+          
+          <a id="en-5-1" class="sidebar-link " href="../../../en/single/development-release/#en-5-1">
+            
+              Development Release
+            
+          </a>
+        
+          
+          <a id="en-5-2" class="sidebar-link " href="../../../en/single/testing-release/#en-5-2">
+            
+              Testing Release
+            
+          </a>
+        
+          
+          <a id="en-5-3" class="sidebar-link " href="../../../en/single/production-release/#en-5-3">
+            
+              Production Release
+            
+          </a>
+        <strong class="sidebar-section">Other</strong>
+          
+          <a id="en-6-0" class="sidebar-link " href="../../../en/single/configuration/#en-6-0">
+            
+              Configuration
+            
+          </a>
+        
+          
+          <a id="en-6-1" class="sidebar-link " href="../../../en/single/testing/#en-6-1">
+            
+              Testing
+            
+          </a>
+        
+          
+          <a id="en-6-2" class="sidebar-link " href="../../../en/single/utils/#en-6-2">
+            
+              Utils
+            
+          </a>
+        
+          
+          <a id="en-6-3" class="sidebar-link " href="../../../en/single/commands/#en-6-3">
+            
+              Commands
+            
+          </a>
+        
+          
+          <a id="en-6-4" class="sidebar-link " href="../../../en/single/advanced-data-processing/#en-6-4">
+            
+              Advanced Data Processing
+            
+          </a>
+        
+  </div>
+</aside>
+
+  
+  <main>
+    <article id="article">
+      <nav id="article-nav">
+  <button id="article-nav-menu-btn"><i class="icon icon-menu"></i> On this section</button>
+  <button id="article-nav-toc-btn"><i class="icon icon-toc"></i> On this page</button>
+</nav>
+      <header id="article-header">
+  <h1>Request Validator</h1>
+</header>
+      <div id="article-content">
+        
+        
+        <h2 id="open-source-packages-used">Open Source Packages Used</h2>
+<p>The default validator in Gin, which is <code>github.com/go-playground/validator/v10</code>.</p>
+<h2 id="validator-initialization">Validator Initialization</h2>
+<p>The validator is initialized through the validator service by default, mainly registering Chinese translations, adding the Chinese <code>zh</code> tag, translating parameter keys into Chinese, and translating multi-error return data into Chinese.</p>
+<h2 id="how-to-define">How to Define</h2>
+<blockquote>
+<p>I will explain using an API as an example; the request validator for web requests is the same as for APIs.</p>
+</blockquote>
+<h3 id="creating-request-validators">Creating Request Validators</h3>
+<p><code>app/api/requests/test_request.go</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;gower/app&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">HelloRequest</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">app</span><span class="p">.</span><span class="nx">Request</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Test</span> <span class="kt">string</span> <span class="s">`json:&#34;test&#34; xml:&#34;test&#34; form:&#34;test&#34; query:&#34;test&#34; protobuf:&#34;test&#34; msgpack:&#34;test&#34; yaml:&#34;test&#34; uri:&#34;test&#34; header:&#34;test&#34; toml:&#34;test&#34; binding:&#34;required&#34; zh:&#34;测试&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">IndexRequest</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">HelloRequest</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Name</span> <span class="o">*</span><span class="kt">string</span> <span class="s">`form:&#34;name&#34; binding:&#34;required&#34; zh:&#34;名字&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<p>All structs ultimately need to embed <code>app.Request</code>, because the validation method is primarily executed through <code>app.Request</code>.</p>
+<p>Why separate <code>HelloRequest</code> and <code>IndexRequest</code>? Because multiple methods might validate several common parameters. In such cases, it is recommended to declare a common struct and then embed this common struct in the specific method validators.</p>
+</blockquote>
+<h2 id="how-to-use">How to Use</h2>
+<p>Directly declare the required request struct in the controller method.</p>
+<p><code>app/api/controllers/test_controller</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">controllers</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/app&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;gower/app/api/requests&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">HelloController</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">app</span><span class="p">.</span><span class="nx">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">Hello</span> <span class="p">=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">HelloController</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">HelloController</span><span class="p">)</span> <span class="nf">Index</span><span class="p">(</span><span class="nx">req</span> <span class="o">*</span><span class="nx">requests</span><span class="p">.</span><span class="nx">IndexRequest</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// After validating that name and test are not empty, execute this method
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="s">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="o">*</span><span class="nx">req</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Data</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;key&#34;</span><span class="p">:</span> <span class="s">&#34;value&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="command-line-tools">Command Line Tools</h2>
+<h3 id="creating-web-request-validators">Creating Web Request Validators</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gower make --request TestAb
+</span></span><span class="line"><span class="cl">or
+</span></span><span class="line"><span class="cl">$ gower make -req TestAb
+</span></span></code></pre></div><h3 id="creating-api-request-validators">Creating API Request Validators</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gower make --api:request TestAc
+</span></span><span class="line"><span class="cl">or
+</span></span><span class="line"><span class="cl">$ gower make -ir TestAc
+</span></span></code></pre></div>
+      </div>
+      
+
+
+
+
+
+
+
+
+  
+  
+  
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+        
+          
+        
+
+      
+    
+        
+
+      
+    
+        
+
+        
+          
+        
+
+        
+        
+      
+
+
+<footer id="article-footer">
+  <time id="article-last-updated" datetime="0001-01-01"><i class="icon icon-calendar"></i>&nbsp;Last updated: 0001-01-01</time>
+
+  
+    <a id="article-prev-link" href="../../../single/controllers/"><i class="icon icon-prev icon-colored"></i> Prev</a>
+  
+
+  
+    <a id="article-next-link"  href="../../../single/exceptions/">Next <i class="icon icon-next icon-colored"></i></a>
+  
+</footer>
+    </article>
+    <aside id="toc">
+  <span class="btn-close"><i class="icon icon-close"></i></span>
+  <div class="sticky">
+    <strong><i class="icon icon-toc"></i> On this page</strong>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#open-source-packages-used">Open Source Packages Used</a></li>
+    <li><a href="#validator-initialization">Validator Initialization</a></li>
+    <li><a href="#how-to-define">How to Define</a>
+      <ul>
+        <li><a href="#creating-request-validators">Creating Request Validators</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-use">How to Use</a></li>
+    <li><a href="#command-line-tools">Command Line Tools</a>
+      <ul>
+        <li><a href="#creating-web-request-validators">Creating Web Request Validators</a></li>
+        <li><a href="#creating-api-request-validators">Creating API Request Validators</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</aside>
+  </main>
+</div>
+
+    <footer id="site-footer">
+  
+  <div id="site-footer-copyright">
+    <a href="https://falling-ts.github.io" target="_blank">
+      <i class="icon icon-copyright"></i> 2024 falling-ts
+    </a>
+  </div>
+
+  
+  <div id="site-footer-social">
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-fund">
+
+    
+
+    
+
+  </div>
+
+  
+  <div id="site-footer-love">
+    Made with <i class="icon icon-love icon-colored"></i> &nbsp;from&nbsp;<a href="https://docura.github.io/" target="_blank">Docura</a>
+  </div>
+</footer>
+    
+
+
+
+
+
+
+<script type="text/javascript" src="../../../js/base.min.js"></script>
+
+
+
+  
+  <script src="../../../js/component/docsearch.min.js"></script>
+  <script type="application/javascript">
+      docsearch({
+          container: '#site-header-search',
+          appId: '',
+          indexName: '',
+          apiKey: '',
+      });
+  </script>
+
+
+<script type="application/javascript">
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js?2024-11-24')
+            .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
+    }
+</script>
+  </body>
+</html>

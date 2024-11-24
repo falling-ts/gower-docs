@@ -5,7 +5,7 @@ url: "/single/db-数据库服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "gorm.io/gorm"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/db-数据库服务"
 
 ### 服务标识符
 
-```
+```yaml
 "db"
 ```
 
@@ -31,13 +31,13 @@ P.Register("db", func() (Depends, Resolve) {
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "logger"
 ```
 
 ## ENV 配置
 
-```
+```yaml
 DB_DRIVER=sqlite
 DB_USER=root
 DB_PASSWD=root

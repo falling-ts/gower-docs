@@ -5,7 +5,7 @@ url: "/single/发布前言"
 
 ## 发布分类
 
-```
+```yaml
 发布开发版
 发布测试版
 发布生产版
@@ -13,21 +13,89 @@ url: "/single/发布前言"
 
 前端所对应的环境文件分别是
 
-```
-.env.development
+```yaml
+.env.dev
 .env.test
-.env.production
+.env.prod
 ```
 
 后端所对应的环境文件分别是
 
-```
-envs/.env.development
+```yaml
+envs/.env.dev
 envs/.env.test
-envs/.env.production
+envs/.env.prod
 ```
 
-## Rclone
+## 使用 Gradle 发布
+
+找到子项目的 `gradle.properties`, 配置三个环境的编译环境, 服务器的 root 连接信息
+
+```env
+; 跳过 go 测试, 取消注释, 不执行 go test
+; skipTest = 1
+
+; 构建程序名称, gower create my-project 后, 会自动改为 bin = my-project
+bin = gower
+
+; 开发环境
+dev.npmBuildEnv = dev
+; 开发 go 测试标签
+dev.goTestTags = tmpl,static
+; 开发 go 构建标签
+dev.goBuildTags = tmpl,static
+; 开发环境禁用 cgo
+dev.cgoEnabled = 0
+; 开发环境系统
+dev.goos = windows
+; 开发环境架构
+dev.goarch = amd64
+
+; 测试环境
+test.npmBuildEnv = test
+; 测试 go 测试标签
+test.goTestTags = test,tmpl,static
+; 测试 go 构建标签
+test.goBuildTags = test,tmpl,static
+; 测试环境禁用 cgo
+test.cgoEnabled = 0
+; 测试环境系统
+test.goos = linux
+; 测试环境架构
+test.goarch = amd64
+; 测试环境 ssh 主机
+test.host = 192.168.101.101
+; 测试环境 ssh 端口
+test.port = 22
+; 测试环境 ssh 用户
+test.user = root
+; 测试环境 ssh 密码
+test.password = root
+
+; 生产环境
+prod.npmBuildEnv = prod
+; 生产 go 测试标签
+prod.goTestTags = prod,tmpl,static
+; 生产 go 构建标签
+prod.goBuildTags = prod,tmpl,static
+; 生产环境禁用 cgo
+prod.cgoEnabled = 0
+; 生产环境系统
+prod.goos = linux
+; 生产环境架构
+prod.goarch = amd64
+; 生产环境 ssh 主机
+prod.host = 192.168.101.101
+; 生产环境 ssh 端口
+prod.port = 22
+; 生产环境 ssh 用户
+prod.user = root
+; 生产环境 ssh 密码
+prod.password = root
+
+```
+
+## 使用命令行 Rclone 发布
 
 Rclone 是一款 Go 语言实现的文件同步传输工具, 可以把测试版和生产版的代码, 上传到对应服务上.
 
@@ -38,12 +106,12 @@ Rclone 是一款 Go 语言实现的文件同步传输工具, 可以把测试版�
 直接运行脚本, 进行安装与配置
 
 ```shell
-./init-rclone
+./cmd/init-rclone
 ```
 
 运行结果如下:
 
-```
+```yaml
 ---------------- rclone installing... ----------------
 go: downloading github.com/rclone/rclone v1.62.2
 go: downloading github.com/buengese/sgzip v0.1.1
@@ -82,7 +150,7 @@ n/s/q>
 #### 然后再输入 `n` 创建 prod remote
 
 #### 结果如下:
-```
+```yaml
 Current remotes:
 
 Name                 Type
@@ -100,28 +168,3 @@ q) Quit config
 e/n/d/r/c/s/q>
 ```
 
-## 具体分类
-
-### 普通发布[推荐]
-
-普通发布, 也叫跨平台编译发布. 意思指程序文件在本地打包, 然后再上传服务器. 这样做服务器是没有源代码的文件, 保证了程序源码的安全性.
-
-普通发布会使用 Docker, 为服务提供运行稳定以及第三方应用服务, 比如: Web 服务器, 数据库, 日志查看器.
-
-普通发布的运行脚本没有任何后缀.
-
-### 全发布
-
-全发布, 也叫服务器编译构建. 意思是指把项目所有源码一起打包, 然后上传服务器, 由服务器运行起 Docker, 然后 对程序进行构建与运行.由于源码存放在服务器, 有一定源码泄漏风险.
-
-全发布后缀都以 `-full` 结尾.
-
-### 简单发布
-
-简单发布, 不使用 Docker 提供稳定运行, 默认使用服务器的 systemd 进行程序运行的崩溃重启.
-
-同时也是本地机器跨平台构建应用, 不会上传源码到服务器上.
-
-由于不使用 Docker , 第三方应用就得自己配置了. 比如: 自己安装数据库和 Web 服务器等.
-
-简单发布都以 `-simple` 结尾.

@@ -1,6 +1,6 @@
 ---
-title: Caddy
-url: "/single/caddy"
+title: Caddy Web 服务器
+url: "/single/caddy-web-服务器"
 ---
 
 > Caddy 是一款 Go 实现 web 服务器, 内置默认 https 访问, 使用正式域名时, 自动获取 Let's Encrypt 非营利性组织的 CA 证书, 实现安全访问.
@@ -55,7 +55,7 @@ docker compose up -d dev-full
 别忘记打包前端的代码哦, 所以建议用平台脚本运行启动
 
 ```shell
-$ ./run-dev-full
+$ ./docker/run-dev-full
 ```
 
 > 这样将启动 dev-full 和 caddy 容器

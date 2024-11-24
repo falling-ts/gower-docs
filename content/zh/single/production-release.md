@@ -16,7 +16,7 @@ url: "/single/发布生产"
 ### 运行发布脚本
 
 ```shell
-$ ./release-prod
+$ ./docker/release-prod
 ```
 
 #### 步骤
@@ -31,8 +31,8 @@ $ ./release-prod
 
 ```shell
 $ cd /go/bin
-$ chmod +x run.sh
-$ ./run.sh
+$ chmod +x docker/run.sh
+$ ./docker/run.sh
 ```
 
 #### 步骤
@@ -45,7 +45,7 @@ $ ./run.sh
 ## 全发布
 
 ```shell
-$ ./release-prod-full
+$ ./docker/release-prod-full
 ```
 > 上传源码至服务器
 
@@ -53,20 +53,24 @@ $ ./release-prod-full
 
 ```shell
 $ cd /go/src
-$ chmod +x run-prod-full.sh
-$ ./run-prod-full.sh
+$ chmod +x docker/run-prod-full.sh
+$ ./docker/run-prod-full.sh
 ```
 
 ## 简单发布
 
 ```shell
-$ ./release-prod-simple
+$ ./cmd/release-prod
 ```
 
 ### 登录服务器
 
 ```shell
 $ cd /go/bin
-$ chmod +x run-simple.sh
-$ ./run-simple.sh
+$ chmod +x cmd/run.sh
+$ ./cmd/run.sh
 ```
+
+## 使用 Gradle 实现简单发布
+
+找到子项目中的 `gower-work/${your-project}/Tasks/prod/ReleaseProd`, 双击运行

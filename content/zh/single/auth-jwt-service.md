@@ -5,7 +5,7 @@ url: "/single/auth-jwt服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/golang-jwt/jwt/v5"
 ```
 
@@ -13,7 +13,7 @@ url: "/single/auth-jwt服务"
 
 ### 服务标识符
 
-```
+```yaml
 "auth"
 ```
 
@@ -59,14 +59,14 @@ P.Register("标识符", func(...services.Service) services.Service)
 
 ## 依赖的服务
 
-```
+```yaml
 "config", "util", "cache"
 ```
 > 讲顺序的, 因此顺序不能改变
 
 ## ENV 配置
 
-```
+```yaml
 # 密钥
 JWT_KEY=iX/YdQ7a2PpF1WYf4rsT9tL1kD9ic7o0EcjeERO4nhE=
 # Token 更新时限

@@ -5,7 +5,7 @@ url: "/single/config-配置服务"
 
 ## 使用的开源库
 
-```
+```yaml
 "github.com/joho/godotenv"
 "github.com/caarlos0/env/v7"
 ```
@@ -14,7 +14,7 @@ url: "/single/config-配置服务"
 
 ### 服务标识符
 
-```
+```yaml
 "config"
 ```
 
@@ -41,7 +41,7 @@ P.Register("config", func(...services.Service) services.Service {
 
 ## ENV 配置
 
-```
+```yaml
 # 后端环境
 
 APP_NAME=Gower
@@ -89,7 +89,7 @@ appName := config.App.Name
 
 ### 基准测试对比
 
-```
+```yaml
 Benchmark/BenchmarkConfig-12            1000000000               0.3776 ns/op
 Benchmark/BenchmarkConfigGet-12          3089138               388.0 ns/op
 ```
