@@ -444,7 +444,10 @@
       <div id="article-content">
         
         
-        <p>发布开发仅仅在本地构建运行.</p>
+        <h2 id="使用-goland-运行配置-支持断点调试">使用 GoLand 运行配置, 支持断点调试</h2>
+<p>找到 Gower Run 运行配置, 修改工作目录, 并选择模块, 最后 Debug 运行, 就可以进行断点调试了.</p>
+<h2 id="使用-gradle-运行开发如果不需要断点调试-推荐使用">使用 Gradle 运行开发[如果不需要断点调试, 推荐使用]</h2>
+<p>找到子项目中的 <code>gower-work/${your-project}/Tasks/dev/Run</code>, 双击运行</p>
 <h2 id="普通发布">普通发布</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ./docker/run-dev
 </span></span></code></pre></div><blockquote>
@@ -507,10 +510,6 @@
 </span></span></span></code></pre></div><blockquote>
 <p>entrypoint-dev-full.sh 是 docker 运行的入口文件</p>
 </blockquote>
-<h2 id="使用-gradle-运行开发">使用 Gradle 运行开发</h2>
-<p>找到子项目中的 <code>gower-work/${your-project}/Tasks/dev/Run</code>, 双击运行</p>
-<h2 id="使用-goland-运行配置-支持断点调试">使用 GoLand 运行配置, 支持断点调试</h2>
-<p>找到 Gower Run 运行配置, 修改工作目录, 并选择模块, 最后 Debug 运行, 就可以进行断点调试了.</p>
 
       </div>
       
@@ -798,6 +797,8 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#使用-goland-运行配置-支持断点调试">使用 GoLand 运行配置, 支持断点调试</a></li>
+    <li><a href="#使用-gradle-运行开发如果不需要断点调试-推荐使用">使用 Gradle 运行开发[如果不需要断点调试, 推荐使用]</a></li>
     <li><a href="#普通发布">普通发布</a>
       <ul>
         <li><a href="#步骤">步骤</a></li>
@@ -810,8 +811,6 @@
         <li><a href="#使用的文件包括-1">使用的文件包括</a></li>
       </ul>
     </li>
-    <li><a href="#使用-gradle-运行开发">使用 Gradle 运行开发</a></li>
-    <li><a href="#使用-goland-运行配置-支持断点调试">使用 GoLand 运行配置, 支持断点调试</a></li>
   </ul>
 </nav>
   </div>
@@ -868,7 +867,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-24')
+        navigator.serviceWorker.register('/sw.js?2024-11-25')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

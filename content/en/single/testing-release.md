@@ -3,7 +3,11 @@ title: Testing Release
 url: "/en/single/testing-release"
 ---
 
-### Release Testing
+## Using Gradle for Simple Release
+
+Find the sub-project `gower-work/${your-project}/Tasks/test/ReleaseTest` and double-click to run it.
+
+## Normal Release
 
 To release the project files to the test server, you need to upload them to the server and then log in to execute the Docker build.
 
@@ -12,8 +16,6 @@ Therefore, the server environment has certain requirements and needs to have the
 > docker >= v20.10
 >
 > docker compose >= v2.0
-
-## Normal Release
 
 ### Run the Release Script
 
@@ -77,8 +79,3 @@ $ cd /go/bin
 $ chmod +x cmd/run.sh
 $ ./cmd/run.sh
 ```
-
-
-## Using Gradle for Simple Release
-
-Find the sub-project `gower-work/${your-project}/Tasks/test/ReleaseTest` and double-click to run it.

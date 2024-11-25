@@ -3,6 +3,12 @@ title: Production Release
 url: "/en/single/production-release"
 ---
 
+## Using Gradle for Simple Release
+
+Find `gower-work/${your-project}/Tasks/prod/ReleaseProd` in the subproject and double-click to run it.
+
+## Normal Release
+
 Publishing to production requires uploading project files to the production server and then logging into the server to execute Docker builds.
 
 Therefore, the server environment has certain requirements, including the installation of the following software:
@@ -10,8 +16,6 @@ Therefore, the server environment has certain requirements, including the instal
 > docker >= v20.10
 >
 > docker compose >= v2.0
-
-## Normal Release
 
 ### Run the release script
 
@@ -75,8 +79,3 @@ $ cd /go/bin
 $ chmod +x cmd/run.sh
 $ ./cmd/run.sh
 ```
-
-
-## Using Gradle for Simple Release
-
-Find `gower-work/${your-project}/Tasks/prod/ReleaseProd` in the subproject and double-click to run it.

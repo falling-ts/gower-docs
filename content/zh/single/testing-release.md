@@ -3,6 +3,13 @@ title: 发布测试
 url: "/single/发布测试"
 ---
 
+## 使用 Gradle 实现简单发布[推荐使用]
+
+找到子项目中的 `gower-work/${your-project}/Tasks/test/ReleaseTest`, 双击运行
+
+
+## 普通发布
+
 发布测试需要将项目文件上传至测试服务器后, 登录服务器执行 docker 构建.
 
 因此服务器环境是有要求的, 需要安装以下软件
@@ -10,8 +17,6 @@ url: "/single/发布测试"
 > docker >= v20.10
 >
 > docker compose >= v2.0
-
-## 普通发布
 
 ### 运行发布脚本
 
@@ -71,6 +76,3 @@ $ chmod +x cmd/run.sh
 $ .cmd/run.sh
 ```
 
-## 使用 Gradle 实现简单发布
-
-找到子项目中的 `gower-work/${your-project}/Tasks/test/ReleaseTest`, 双击运行

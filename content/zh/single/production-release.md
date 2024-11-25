@@ -3,6 +3,13 @@ title: 发布生产
 url: "/single/发布生产"
 ---
 
+
+## 使用 Gradle 实现简单发布[推荐]
+
+找到子项目中的 `gower-work/${your-project}/Tasks/prod/ReleaseProd`, 双击运行
+
+## 普通发布
+
 发布生产需要将项目文件上传至生产服务器后, 登录服务器执行 docker 构建.
 
 因此服务器环境是有要求的, 需要安装以下软件
@@ -10,8 +17,6 @@ url: "/single/发布生产"
 > docker >= v20.10
 >
 > docker compose >= v2.0
-
-## 普通发布
 
 ### 运行发布脚本
 
@@ -70,7 +75,3 @@ $ cd /go/bin
 $ chmod +x cmd/run.sh
 $ ./cmd/run.sh
 ```
-
-## 使用 Gradle 实现简单发布
-
-找到子项目中的 `gower-work/${your-project}/Tasks/prod/ReleaseProd`, 双击运行

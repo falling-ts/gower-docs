@@ -444,13 +444,15 @@
       <div id="article-content">
         
         
-        <p>发布生产需要将项目文件上传至生产服务器后, 登录服务器执行 docker 构建.</p>
+        <h2 id="使用-gradle-实现简单发布推荐">使用 Gradle 实现简单发布[推荐]</h2>
+<p>找到子项目中的 <code>gower-work/${your-project}/Tasks/prod/ReleaseProd</code>, 双击运行</p>
+<h2 id="普通发布">普通发布</h2>
+<p>发布生产需要将项目文件上传至生产服务器后, 登录服务器执行 docker 构建.</p>
 <p>因此服务器环境是有要求的, 需要安装以下软件</p>
 <blockquote>
 <p>docker &gt;= v20.10</p>
 <p>docker compose &gt;= v2.0</p>
 </blockquote>
-<h2 id="普通发布">普通发布</h2>
 <h3 id="运行发布脚本">运行发布脚本</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ./docker/release-prod
 </span></span></code></pre></div><h4 id="步骤">步骤</h4>
@@ -488,9 +490,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">cd</span> /go/bin
 </span></span><span class="line"><span class="cl">$ chmod +x cmd/run.sh
 </span></span><span class="line"><span class="cl">$ ./cmd/run.sh
-</span></span></code></pre></div><h2 id="使用-gradle-实现简单发布">使用 Gradle 实现简单发布</h2>
-<p>找到子项目中的 <code>gower-work/${your-project}/Tasks/prod/ReleaseProd</code>, 双击运行</p>
-
+</span></span></code></pre></div>
       </div>
       
 
@@ -792,6 +792,7 @@
     <strong><i class="icon icon-toc"></i> On this page</strong>
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#使用-gradle-实现简单发布推荐">使用 Gradle 实现简单发布[推荐]</a></li>
     <li><a href="#普通发布">普通发布</a>
       <ul>
         <li><a href="#运行发布脚本">运行发布脚本</a></li>
@@ -808,7 +809,6 @@
         <li><a href="#登录服务器-1">登录服务器</a></li>
       </ul>
     </li>
-    <li><a href="#使用-gradle-实现简单发布">使用 Gradle 实现简单发布</a></li>
   </ul>
 </nav>
   </div>
@@ -865,7 +865,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-24')
+        navigator.serviceWorker.register('/sw.js?2024-11-25')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

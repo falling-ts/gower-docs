@@ -3,7 +3,14 @@ title: Development Release
 url: "/en/single/development-release"
 ---
 
-Development and release are only performed locally for building and running.
+
+## Running Development with Gradle
+
+Find the `gower-work/${your-project}/Tasks/dev/Run` in the subproject and double-click to run it.
+
+## Running Configuration with GoLand, Supporting Breakpoint Debugging
+
+Find the Gower Run configuration, modify the working directory, select the module, and finally run in Debug mode to enable breakpoint debugging.
 
 ## Normal Release
 
@@ -87,13 +94,4 @@ docker-compose.yaml
 ./docker/entrypoint-dev-full.sh
 ```
 
-
 > entrypoint-dev-full.sh is the entry file for Docker to run.
-
-## Running Development with Gradle
-
-Find the `gower-work/${your-project}/Tasks/dev/Run` in the subproject and double-click to run it.
-
-## Running Configuration with GoLand, Supporting Breakpoint Debugging
-
-Find the Gower Run configuration, modify the working directory, select the module, and finally run in Debug mode to enable breakpoint debugging.

@@ -3,7 +3,14 @@ title: 发布开发
 url: "/single/发布开发"
 ---
 
-发布开发仅仅在本地构建运行.
+## 使用 GoLand 运行配置, 支持断点调试
+
+找到 Gower Run 运行配置, 修改工作目录, 并选择模块, 最后 Debug 运行, 就可以进行断点调试了.
+
+## 使用 Gradle 运行开发[如果不需要断点调试, 推荐使用]
+
+找到子项目中的 `gower-work/${your-project}/Tasks/dev/Run`, 双击运行
+
 
 ## 普通发布
 
@@ -84,11 +91,3 @@ docker-compose.yaml
 ```
 
 > entrypoint-dev-full.sh 是 docker 运行的入口文件
-
-## 使用 Gradle 运行开发
-
-找到子项目中的 `gower-work/${your-project}/Tasks/dev/Run`, 双击运行
-
-## 使用 GoLand 运行配置, 支持断点调试
-
-找到 Gower Run 运行配置, 修改工作目录, 并选择模块, 最后 Debug 运行, 就可以进行断点调试了.
