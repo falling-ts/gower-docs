@@ -229,6 +229,14 @@
 <li>打开项目后, 如果提示安装推荐插件, 建议进行安装</li>
 <li>等待 Gradle 初始化完成</li>
 </ul>
+<h2 id="绑定-tmpl-的-html-语法高亮">绑定 <code>*.tmpl</code> 的 html 语法高亮</h2>
+<ul>
+<li>打开 VSCode 设置</li>
+<li>搜索 <code>files.associations</code></li>
+<li>添加 <code>*.tmpl</code>, <code>html</code></li>
+</ul>
+<h2 id="注意事项">注意事项</h2>
+<p>使用 VSCode 进行项目开发时, 需要修改 <code>envs/.env.dev</code> 的 <code>DB_DRIVER</code> 为 <code>mysql</code>, 否则动态 <code>yesicon</code> 无法正常加载, 会影响后台菜单页面左侧图标</p>
 
       </div>
       
@@ -310,6 +318,8 @@
   <ul>
     <li><a href="#vscode-需要安装的插件">VSCode 需要安装的插件</a></li>
     <li><a href="#使用-vscode-打开-gower-work">使用 VSCode 打开 <code>gower-work</code></a></li>
+    <li><a href="#绑定-tmpl-的-html-语法高亮">绑定 <code>*.tmpl</code> 的 html 语法高亮</a></li>
+    <li><a href="#注意事项">注意事项</a></li>
   </ul>
 </nav>
   </div>
@@ -366,7 +376,7 @@
 
 <script type="application/javascript">
     if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js?2024-11-26')
+        navigator.serviceWorker.register('/sw.js?2024-11-27')
             .catch(function(err) {console.error('ServiceWorker registration failed: ', err);});
     }
 </script>

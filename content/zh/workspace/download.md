@@ -11,12 +11,10 @@ url: "/workspace/下载"
 
 - 如果不想下载 zip, 也可以使用 `git clone` 拉取最新 tag 发行版的代码.
 
-> 查看 [gower-work-tags](https://github.com/falling-ts/gower-work/tags), 查看最新版本号, 假设是 0.8.0
-
 ```shell
-$ git clone -b v0.8.0 --single-branch --depth 1 https://github.com/falling-ts/gower-work.git
+$ git clone -b v0.8.1 --single-branch --depth 1 https://github.com/falling-ts/gower-work.git
 ```
 或者
 ```shell
-$ git clone -b v0.8.0 --single-branch --depth 1 https://gitee.com/falling-ts/gower-work.git
+$ git clone -b v0.8.1 --single-branch --depth 1 https://gitee.com/falling-ts/gower-work.git
 ```
